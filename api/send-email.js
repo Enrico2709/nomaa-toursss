@@ -1,4 +1,4 @@
-require('dotenv').config();
+//require('dotenv').config();
 const nodemailer = require('nodemailer');
 const rateLimit = require('express-rate-limit');
 const sanitizeHtml = require('sanitize-html');
