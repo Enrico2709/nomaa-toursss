@@ -1,4 +1,4 @@
-//require('dotenv').config();
+
 const nodemailer = require('nodemailer');
 const rateLimit = require('express-rate-limit');
 const sanitizeHtml = require('sanitize-html');
@@ -36,7 +36,6 @@ const templates = {
     <p><a href="https://nomaa-toursss.vercel.app" target="_blank">Visit our website</a></p>
   `
 };
-
 
 module.exports = async (req, res) => {
   try {
