@@ -12,9 +12,31 @@ const limiter = rateLimit({
 
 // Email templates
 const templates = {
-  admin: (data) => `...template HTML...`,
-  customer: (data) => `...template HTML...`
+  admin: (data) => `
+    <h2>New Booking Received</h2>
+    <p><strong>Name:</strong> ${data.name}</p>
+    <p><strong>Email:</strong> ${data.email}</p>
+    <p><strong>Phone:</strong> ${data.phone}</p>
+    <p><strong>Tour:</strong> ${data.tourName}</p>
+    <p><strong>Date:</strong> ${data.date}</p>
+    <p><strong>Price:</strong> $${data.tourPrice}</p>
+    <hr>
+    <p>This booking was submitted via the NOMAA Tours website.</p>
+  `,
+  customer: (data) => `
+    <h2>Thank You for Booking with NOMAA Tours!</h2>
+    <p>Hi ${data.name},</p>
+    <p>We're excited to confirm your booking for the <strong>${data.tourName}</strong>.</p>
+    <p><strong>Date:</strong> ${data.date}</p>
+    <p><strong>Price:</strong> $${data.tourPrice}</p>
+    <p>We’ll be in touch soon with more details. If you have any questions, feel free to reply to this email.</p>
+    <br>
+    <p>Warm regards,</p>
+    <p><strong>The NOMAA Tours Team</strong></p>
+    <p><a href="https://nomaa-toursss.vercel.app" target="_blank">Visit our website</a></p>
+  `
 };
+
 
 module.exports = async (req, res) => {
   try {
