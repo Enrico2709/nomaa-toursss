@@ -1,14 +1,6 @@
 
 const nodemailer = require('nodemailer');
-const rateLimit = require('express-rate-limit');
 const sanitizeHtml = require('sanitize-html');
-
-// Rate limiting
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 5,
-  message: 'Too many requests from this IP, please try again later'
-});
 
 // Email templates
 const templates = {
@@ -39,14 +31,6 @@ const templates = {
 
 module.exports = async (req, res) => {
   try {
-    // Apply rate limiting
-    await new Promise((resolve, reject) => {
-      limiter(req, res, (err) => {
-        if (err) reject(err);
-        else resolve();
-      });
-    });
-
     // CORS handling
     const allowedOrigins = JSON.parse(process.env.ALLOWED_ORIGINS || '[]');
     if (allowedOrigins.includes(req.headers.origin)) {
