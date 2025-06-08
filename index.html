@@ -2,418 +2,352 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Explore unforgettable travel experiences with NOMAA Tours, Adventures, & More.">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Explore unforgettable travel experiences with NOMAA Tours, Adventures, & More." />
     <title>Nomaa Adventours and More Jamaica</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* Minimal styles for modal */
+        .booking-form {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .booking-form-content {
+            background: white;
+            padding: 20px;
+            max-width: 400px;
+            width: 90%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #0003;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+        }
+        .loading-indicator {
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Nomaa Adventours and More Jamaica</h1>
-        <p>Explore the world with unforgettable experiences</p>
-    </header>
+<header>
+    <h1>Nomaa Adventours and More Jamaica</h1>
+    <p>Explore the world with unforgettable experiences</p>
+</header>
 
-    <nav>
-        <a href="#about">About Us</a>
-        <a href="#tours">Tours & Packages</a>
-        <a href="#accommodations-crafts">Accommodations & Crafts</a>
-        <a href="#events-celebrations">Events & Celebrations</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact Us</a>
-    </nav>
+<nav>
+    <a href="#about">About Us</a>
+    <a href="#tours">Tours & Packages</a>
+    <a href="#accommodations-crafts">Accommodations & Crafts</a>
+    <a href="#events-celebrations">Events & Celebrations</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact Us</a>
+</nav>
 
-    <div class="slideshow">
-        <div class="slide active" style="background-image: url('images/1.jpg');">
-            <img src="images/1.jpg" alt="Scenic landscape" style="display: none;">
-        </div>
-        <div class="slide" style="background-image: url('images/2.jpg');">
-            <img src="images/2.jpg" alt="Beautiful beach" style="display: none;">
-        </div>
-        <div class="slide" style="background-image: url('images/3.jpg');">
-            <img src="images/3.jpg" alt="Mountain view" style="display: none;">
-        </div>
-        <div class="slide" style="background-image: url('images/4.jpg');">
-            <img src="images/4.jpg" alt="Tropical forest" style="display: none;">
-        </div>
-        <noscript>
-            <img src="images/default.jpg" alt="Default image" style="width: 100%; height: auto;">
-        </noscript>
-        <div class="overlay">
-            <p>Your adventure starts here!</p>
+<div class="slideshow">
+    <div class="slide active" style="background-image: url('images/1.jpg');">
+        <img src="images/1.jpg" alt="Scenic landscape" style="display: none;">
+    </div>
+    <div class="slide" style="background-image: url('images/2.jpg');">
+        <img src="images/2.jpg" alt="Beautiful beach" style="display: none;">
+    </div>
+    <div class="slide" style="background-image: url('images/3.jpg');">
+        <img src="images/3.jpg" alt="Mountain view" style="display: none;">
+    </div>
+    <div class="slide" style="background-image: url('images/4.jpg');">
+        <img src="images/4.jpg" alt="Tropical forest" style="display: none;">
+    </div>
+    <noscript>
+        <img src="images/default.jpg" alt="Default image" style="width: 100%; height: auto;">
+    </noscript>
+    <div class="overlay">
+        <p>Your adventure starts here!</p>
+    </div>
+</div>
+
+<section id="about">
+    <div class="container">
+        <h2>About Us</h2>
+        <p>We are a local tour company dedicated to providing exceptional travel experiences in Jamaica. With years of experience and deep local knowledge, our passionate team ensures every guest discovers the authentic beauty of our island paradise.</p>
+        <p>At NOMAA Tours, we combine adventure, culture, and relaxation to create unforgettable journeys that showcase the best of Jamaica. From hidden waterfalls and secluded beaches to vibrant cultural experiences, we'll guide you through the heart and soul of our beautiful country.</p>
+    </div>
+</section>
+
+<section id="tours">
+    <div class="container">
+        <h2>Our Tours & Packages</h2>
+        <p>Choose from a variety of tours tailored to suit your preferences. <strong>Adventure Awaits!</strong></p>
+
+        <div class="packages">
+            <div class="package">
+                <h3>Jamaica Adventure Tour</h3>
+                <p>Explore the best of Jamaica with this adventure-packed tour. From the Blue Mountains to the stunning beaches of Negril, this tour has it all.</p>
+                <button onclick="showBookingForm('Jamaica Adventure Tour', 499);">Book Now</button>
+            </div>
+
+            <div class="package">
+                <h3>Culture & Heritage Tour</h3>
+                <p>Immerse yourself in Jamaican history and culture. Visit iconic landmarks, experience authentic local cuisine, and learn about the island's rich heritage.</p>
+                <button onclick="showBookingForm('Culture & Heritage Tour', 350);">Book Now</button>
+            </div>
+
+            <div class="package">
+                <h3>Beach Relaxation Package</h3>
+                <p>Unwind on Jamaica's most beautiful beaches. This package includes access to exclusive resorts, beachfront accommodations, and spa treatments.</p>
+                <button onclick="showBookingForm('Beach Relaxation Package', 799);">Book Now</button>
+            </div>
+
+            <div class="package">
+                <h3>Eco-Tourism & Nature Escape</h3>
+                <p>For nature lovers! Explore hidden waterfalls, hike through lush forests, and experience the natural beauty of Jamaica like never before.</p>
+                <button onclick="showBookingForm('Eco-Tourism & Nature Escape', 450);">Book Now</button>
+            </div>
+
+            <div class="package">
+                <h3>Family Fun Tour</h3>
+                <p>Perfect for families! Enjoy a mix of adventure, culture, and relaxation with activities that all ages can enjoy.</p>
+                <button onclick="showBookingForm('Family Fun Tour', 600);">Book Now</button>
+            </div>
         </div>
     </div>
+</section>
 
-    <section id="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>We are a local tour company dedicated to providing exceptional travel experiences in Jamaica. With years of experience and deep local knowledge, our passionate team ensures every guest discovers the authentic beauty of our island paradise.</p>
-            <p>At NOMAA Tours, we combine adventure, culture, and relaxation to create unforgettable journeys that showcase the best of Jamaica. From hidden waterfalls and secluded beaches to vibrant cultural experiences, we'll guide you through the heart and soul of our beautiful country.</p>
-        </div>
-    </section>
-
-    <section id="tours">
-        <div class="container">
-            <h2>Our Tours & Packages</h2>
-            <p>Choose from a variety of tours tailored to suit your preferences. <strong>Adventure Awaits!</strong></p>
-
-            <div class="packages">
-                <div class="package">
-                    <h3>Jamaica Adventure Tour</h3>
-                    <p>Explore the best of Jamaica with this adventure-packed tour. From the Blue Mountains to the stunning beaches of Negril, this tour has it all.</p>
-                    <button onclick="showBookingForm('Jamaica Adventure Tour', 499);">Book Now</button>
-                </div>
-
-                <div class="package">
-                    <h3>Culture & Heritage Tour</h3>
-                    <p>Immerse yourself in Jamaican history and culture. Visit iconic landmarks, experience authentic local cuisine, and learn about the island's rich heritage.</p>
-                    <button onclick="showBookingForm('Culture & Heritage Tour', 350);">Book Now</button>
-                </div>
-
-                <div class="package">
-                    <h3>Beach Relaxation Package</h3>
-                    <p>Unwind on Jamaica's most beautiful beaches. This package includes access to exclusive resorts, beachfront accommodations, and spa treatments.</p>
-                    <button onclick="showBookingForm('Beach Relaxation Package', 799);">Book Now</button>
-                </div>
-
-                <div class="package">
-                    <h3>Eco-Tourism & Nature Escape</h3>
-                    <p>For nature lovers! Explore hidden waterfalls, hike through lush forests, and experience the natural beauty of Jamaica like never before.</p>
-                    <button onclick="showBookingForm('Eco-Tourism & Nature Escape', 450);">Book Now</button>
-                </div>
-
-                <div class="package">
-                    <h3>Family Fun Tour</h3>
-                    <p>Perfect for families! Enjoy a mix of adventure, culture, and relaxation with activities that all ages can enjoy.</p>
-                    <button onclick="showBookingForm('Family Fun Tour', 600);">Book Now</button>
-                </div>
+<section id="accommodations-crafts" class="new-section">
+    <div class="container">
+        <h2>Accommodations & Local Crafts</h2>
+        <div class="content-block">
+            <div class="text-content">
+                <h3>Bed and Breakfast Stays</h3>
+                <p>Experience the warmth of Jamaican hospitality with our curated Bed and Breakfast options. Stay in charming, locally-run establishments that offer an authentic taste of island living.</p>
+                <a href="#contact" class="btn btn-primary">Inquire About B&B Stays</a>
+            </div>
+            <div class="text-content">
+                <h3>Crochet Workshops & Craft Sales</h3>
+                <p>Immerse yourself in our vibrant culture with crochet workshops and unique craft experiences. Learn the art of traditional Jamaican crochet and take home a handmade souvenir, or find beautiful, locally-made items.</p>
+                <a href="#contact" class="btn btn-secondary">Book a Crochet Experience</a>
             </div>
         </div>
-    </section>
-
-    <!-- Accommodations & Local Crafts Section -->
-    <section id="accommodations-crafts" class="new-section">
-        <div class="container">
-            <h2>Accommodations & Local Crafts</h2>
-            <div class="content-block">
-                <div class="text-content">
-                    <h3>Bed and Breakfast Stays</h3>
-                    <p>Experience the warmth of Jamaican hospitality with our curated Bed and Breakfast options. Stay in charming, locally-run establishments that offer an authentic taste of island living.</p>
-                    <a href="#contact" class="btn btn-primary">Inquire About B&B Stays</a>
-                </div>
-                <div class="text-content">
-                    <h3>Crochet Workshops & Craft Sales</h3>
-                    <p>Immerse yourself in our vibrant culture with crochet workshops and unique craft experiences. Learn the art of traditional Jamaican crochet and take home a handmade souvenir, or find beautiful, locally-made items.</p>
-                    <a href="#contact" class="btn btn-secondary">Book a Crochet Experience</a>
-                </div>
-            </div>
-            <!-- Add your images here -->
-            <div class="image-gallery">
-                <!-- Example placeholders, replace with your images -->
-                <img src="images/bnb2.jpg" alt="Cozy Jamaican Bed and Breakfast" />
-                <img src="images/crochet-workshop.jpg" alt="Jamaican Crochet Workshop" />
-            </div>
-        </div>
-    </section>
-
-    <!-- Events & Celebrations Section -->
-    <section id="events-celebrations" class="new-section">
-        <div class="container">
-            <h2>Events & Celebrations</h2>
-            <p>Let NOMAA Tours help you plan your unforgettable special occasion in Jamaica. From intimate beach weddings to vibrant birthday parties and significant family celebrations, we offer comprehensive event planning and coordination services.</p>
-            <p>Our team works with you to create a seamless and memorable event, handling everything from venue selection and catering to local entertainment and personalized itineraries. Make your special moments truly magical against the backdrop of our beautiful island.</p>
-            <a href="#contact" class="btn btn-primary">Request a Quote</a>
-            <!-- Optionally, add event-themed images -->
-            <div class="image-gallery">
-                <img src="images/wedding.jpg" alt="Jamaican Beach Wedding" />
-                <img src="images/party.jpg" alt="Jamaican Celebration Party" />
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonials">
-        <div class="container">
-            <h2>What Our Clients Say</h2>
-            <div class="testimonials-container">
-                <div class="testimonial">
-                    <blockquote>
-                        <p>"This was the best trip of my life! The guides were knowledgeable and friendly, and we got to experience the true Jamaica. Highly recommend."</p>
-                        <cite>- Sarah Johnson, New York</cite>
-                    </blockquote>
-                </div>
-                <div class="testimonial">
-                    <blockquote>
-                        <p>"The Beach Relaxation Package exceeded all expectations. The staff made us feel like family, and the beaches were absolutely stunning."</p>
-                        <cite>- Mark and Lisa Thompson, Canada</cite>
-                    </blockquote>
-                </div>
-                <div class="testimonial">
-                    <blockquote>
-                        <p>"We did the Family Fun Tour with our kids and it was perfect - everyone from our 8-year-old to our teenagers found something to love!"</p>
-                        <cite>- The Wilson Family, London</cite>
-                    </blockquote>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="gallery">
-        <div class="container">
-            <h2>Gallery</h2>
-            <p>Take a peek at some of the breathtaking destinations we offer.</p>
-            <div class="gallery-container">
-                <div class="gallery-item">
-                    <img src="images/1.jpg" alt="Jamaica beach">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/2.jpg" alt="Blue mountain">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/3.jpg" alt="Waterfall">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/4.jpg" alt="Jamaica sunset">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/5.jpg" alt="Jamaican culture">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/6.jpg" alt="Tropical forest">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>Email: Nomaaadventoursandmorejamaica@gmail.com</p>
-            <p>Phone: 876-405-9605 | 876-830-2712 | 876-484-7700</p>
-            <p>Facebook: <a href="https://www.facebook.com/NomaaAdventoursAndMoreJamaica" target="_blank">Nomaa Adventours and More Jamaica</a></p>
-            <div id="map"></div>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2025 Nomaa Adventours and More Jamaica. All rights reserved.</p>
-    </footer>
-
-    <div class="booking-form" id="bookingForm">
-        <div class="booking-form-content">
-            <h3>Book Your Tour Now</h3>
-            <form id="bookTourForm">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required />
-                <div id="name-error" class="error-message"></div>
-
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" placeholder="Your Email" required />
-                <div id="email-error" class="error-message"></div>
-
-                <label for="phone">Your Phone Number:</label>
-                <input type="text" id="phone" name="phone" placeholder="Your Phone Number" required />
-                <div id="phone-error" class="error-message"></div>
-
-                <label for="date">Tour Date:</label>
-                <input type="date" id="date" name="date" required />
-                <div id="date-error" class="error-message"></div>
-
-                <input type="hidden" id="tourName" name="tourName" />
-                <input type="hidden" id="tourPrice" name="tourPrice" />
-                <button type="submit">Submit</button>
-                <button type="button" onclick="closeBookingForm();">Close</button>
-                <div class="loading-indicator" style="display: none;">Processing...</div>
-                <div id="form-message" style="margin-top: 10px;"></div>
-            </form>
+        <div class="image-gallery">
+            <img src="images/bnb2.jpg" alt="Cozy Jamaican Bed and Breakfast" />
+            <img src="images/crochet-workshop.jpg" alt="Jamaican Crochet Workshop" />
         </div>
     </div>
+</section>
 
-    <script>
-        function showBookingForm(tourName, tourPrice) {
-            document.getElementById('tourName').value = tourName;
-            document.getElementById('tourPrice').value = tourPrice;
-            document.getElementById('bookingForm').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+<section id="events-celebrations" class="new-section">
+    <div class="container">
+        <h2>Events & Celebrations</h2>
+        <p>Let NOMAA Tours help you plan your unforgettable special occasion in Jamaica. From intimate beach weddings to vibrant birthday parties and significant family celebrations, we offer comprehensive event planning and coordination services.</p>
+        <p>Our team works with you to create a seamless and memorable event, handling everything from venue selection and catering to local entertainment and personalized itineraries. Make your special moments truly magical against the backdrop of our beautiful island.</p>
+        <a href="#contact" class="btn btn-primary">Request a Quote</a>
+        <div class="image-gallery">
+            <img src="images/wedding.jpg" alt="Jamaican Beach Wedding" />
+            <img src="images/party.jpg" alt="Jamaican Celebration Party" />
+        </div>
+    </div>
+</section>
+
+<section id="testimonials">
+    <div class="container">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <blockquote>
+                    <p>"This was the best trip of my life! The guides were knowledgeable and friendly, and we got to experience the true Jamaica. Highly recommend."</p>
+                    <cite>- Sarah Johnson, New York</cite>
+                </blockquote>
+            </div>
+            <div class="testimonial">
+                <blockquote>
+                    <p>"The Beach Relaxation Package exceeded all expectations. The staff made us feel like family, and the beaches were absolutely stunning."</p>
+                    <cite>- Mark and Lisa Thompson, Canada</cite>
+                </blockquote>
+            </div>
+            <div class="testimonial">
+                <blockquote>
+                    <p>"Our family loved the Family Fun Tour. It was the perfect balance of adventure and relaxation for all ages."</p>
+                    <cite>- Maria Gomez, Florida</cite>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="gallery" class="new-section">
+    <div class="container">
+        <h2>Gallery</h2>
+        <div class="image-gallery">
+            <img src="images/gallery1.jpg" alt="Blue Mountains View" />
+            <img src="images/gallery2.jpg" alt="Negril Beach Sunset" />
+            <img src="images/gallery3.jpg" alt="Waterfall Hike" />
+            <img src="images/gallery4.jpg" alt="Local Market" />
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="new-section">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>Reach out to us for inquiries, bookings, or just to say hello!</p>
+
+        <form id="bookingForm" class="booking-form" aria-hidden="true" role="dialog" aria-modal="true">
+            <div class="booking-form-content" role="document">
+                <h3>Book Your Tour</h3>
+                <button type="button" onclick="closeBookingForm()" aria-label="Close booking form">&times;</button>
+                <div>
+                    <label for="packageName">Package:</label>
+                    <input type="text" id="packageName" name="packageName" readonly aria-readonly="true" />
+                </div>
+                <div>
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required aria-required="true" />
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required aria-required="true" />
+                </div>
+                <div>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9\-+\s()]{7,15}" />
+                </div>
+                <div>
+                    <label for="date">Preferred Date:</label>
+                    <input type="date" id="date" name="date" required aria-required="true" />
+                </div>
+                <div>
+                    <label for="notes">Additional Notes:</label>
+                    <textarea id="notes" name="notes"></textarea>
+                </div>
+                <div class="error-message" id="formError"></div>
+                <div>
+                    <button type="submit">Submit Booking</button>
+                </div>
+                <div class="loading-indicator" id="loading" style="display:none;">Sending your booking...</div>
+                <div id="formSuccess" style="color: green; margin-top: 10px;"></div>
+            </div>
+        </form>
+
+        <p>Or contact us directly at:</p>
+        <ul>
+            <li>Phone: +1 (876) 405-9605</li>
+            <li>Email: info@nomaa-adventours.com</li>
+            <li><a href="https://wa.me/18764059605" target="_blank" rel="noopener noreferrer">WhatsApp us</a></li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Nomaa Adventours and More Jamaica. All rights reserved.</p>
+</footer>
+
+<script>
+    // Slide show logic
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+    }
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }, 5000);
+
+    // Booking form show/hide
+    function showBookingForm(packageName, price) {
+        document.getElementById('packageName').value = packageName;
+        document.getElementById('bookingForm').style.display = 'flex';
+        document.getElementById('bookingForm').setAttribute('aria-hidden', 'false');
+        document.getElementById('formError').textContent = '';
+        document.getElementById('formSuccess').textContent = '';
+        document.getElementById('loading').style.display = 'none';
+    }
+    function closeBookingForm() {
+        document.getElementById('bookingForm').style.display = 'none';
+        document.getElementById('bookingForm').setAttribute('aria-hidden', 'true');
+    }
+
+    // Form submission handler
+    const bookingForm = document.getElementById('bookingForm');
+    bookingForm.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const formError = document.getElementById('formError');
+        const formSuccess = document.getElementById('formSuccess');
+        const loadingIndicator = document.getElementById('loading');
+
+        formError.textContent = '';
+        formSuccess.textContent = '';
+
+        // Basic validation
+        const packageName = bookingForm.packageName.value.trim();
+        const fullName = bookingForm.fullName.value.trim();
+        const email = bookingForm.email.value.trim();
+        const phone = bookingForm.phone.value.trim();
+        const date = bookingForm.date.value;
+        const notes = bookingForm.notes.value.trim();
+
+        if (!packageName || !fullName || !email || !date) {
+            formError.textContent = 'Please fill in all required fields.';
+            return;
         }
-
-        function closeBookingForm() {
-            document.getElementById('bookingForm').style.display = 'none';
-            document.body.style.overflow = '';
-            // Reset form and error messages
-            document.getElementById('bookTourForm').reset();
-            document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
-            document.getElementById('form-message').textContent = '';
+        if (!validateEmail(email)) {
+            formError.textContent = 'Please enter a valid email address.';
+            return;
         }
+        // Optionally validate phone with pattern or leave optional
 
-        let slides = document.querySelectorAll('.slide');
-        let currentSlide = 0;
+        // Show loading indicator
+        loadingIndicator.style.display = 'block';
 
-        function showNextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-
-        // Start slideshow
-        setInterval(showNextSlide, 4000);
-
-        document.getElementById('bookTourForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const date = document.getElementById('date').value;
-            const tourName = document.getElementById('tourName').value;
-            const tourPrice = document.getElementById('tourPrice').value;
-
-            let hasErrors = false;
-
-            document.getElementById('name-error').textContent = '';
-            document.getElementById('email-error').textContent = '';
-            document.getElementById('phone-error').textContent = '';
-            document.getElementById('date-error').textContent = '';
-
-            if (!name) {
-                document.getElementById('name-error').textContent = 'Please enter your name.';
-                hasErrors = true;
-            }
-
-            const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-            if (!email) {
-                document.getElementById('email-error').textContent = 'Please enter your email address.';
-                hasErrors = true;
-            } else if (!emailRegex.test(email)) {
-                document.getElementById('email-error').textContent = 'Please enter a valid email address.';
-                hasErrors = true;
-            }
-
-            const phoneRegex = /^(\+?1-?)?(\d{3})[- ]?\d{3}[- ]?\d{4}$/;
-            if (!phone) {
-                document.getElementById('phone-error').textContent = 'Please enter your phone number.';
-                hasErrors = true;
-            } else if (!phoneRegex.test(phone)) {
-                document.getElementById('phone-error').textContent = 'Please enter a valid phone number.';
-                hasErrors = true;
-            }
-
-            const selectedDate = new Date(date);
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-            if (!date) {
-                document.getElementById('date-error').textContent = 'Please select a tour date.';
-                hasErrors = true;
-            } else if (selectedDate < today) {
-                document.getElementById('date-error').textContent = 'Please select a future date.';
-                hasErrors = true;
-            }
-
-            if (hasErrors) {
-                return;
-            }
-
-            document.querySelector('.loading-indicator').style.display = 'block';
-            document.getElementById('form-message').textContent = '';
-
-            // Send form data to Vercel serverless function
-            fetch('/api/send-email', {
+        try {
+            // Send data to serverless function
+            const response = await fetch('/api/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    name: name,
-                    email: email,
-                    phone: phone,
-                    date: date,
-                    tourName: tourName,
-                    tourPrice: tourPrice,
+                    packageName,
+                    fullName,
+                    email,
+                    phone,
+                    date,
+                    notes,
                 }),
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.querySelector('.loading-indicator').style.display = 'none';
-                document.getElementById('form-message').textContent = data;
-                if (data.includes('Thank you')) {
-                    document.getElementById('bookTourForm').reset();
-                    setTimeout(closeBookingForm, 2000);
-                }
-            })
-            .catch(error => {
-                document.querySelector('.loading-indicator').style.display = 'none';
-                document.getElementById('form-message').textContent = 'An error occurred. Please try again.';
-                console.error('Error:', error);
             });
-        });
 
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeBookingForm();
+            if (!response.ok) {
+                throw new Error('Failed to send booking request.');
             }
-        });
+            const result = await response.json();
 
-        document.getElementById('bookingForm').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeBookingForm();
+            loadingIndicator.style.display = 'none';
+
+            if (result.success) {
+                formSuccess.textContent = 'Thank you! Your booking request has been sent.';
+                bookingForm.reset();
+                setTimeout(closeBookingForm, 3000);
+            } else {
+                formError.textContent = 'Sorry, there was a problem. Please try again later.';
             }
-        });
-
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        function initMap() {
-            // Jamaica coordinates
-            const jamaica = { lat: 18.1096, lng: -77.2975 };
-            
-            const map = new google.maps.Map(document.getElementById('map'), {
-                center: jamaica,
-                zoom: 8,
-                styles: [
-                    {
-                        "featureType": "water",
-                        "elementType": "geometry",
-                        "stylers": [{"color": "#e9e9e9"},{"lightness": 17}]
-                    },
-                    {
-                        "featureType": "landscape",
-                        "elementType": "geometry",
-                        "stylers": [{"color": "#f5f5f5"},{"lightness": 20}]
-                    },
-                    {
-                        "featureType": "road.highway",
-                        "elementType": "geometry.fill",
-                        "stylers": [{"color": "#ffffff"},{"lightness": 17}]
-                    }
-                ]
-            });
-            
-            const marker = new google.maps.Marker({
-                position: jamaica,
-                map: map,
-                title: 'NOMAA Tours',
-                animation: google.maps.Animation.DROP
-            });
-            
-            const infoWindow = new google.maps.InfoWindow({
-                content: '<div><strong>NOMAA Tours, Adventures, & More</strong><br>Jamaica<br>Phone: 876-405-9605</div>'
-            });
-            
-            marker.addListener('click', function() {
-                infoWindow.open(map, marker);
-            });
+        } catch (error) {
+            loadingIndicator.style.display = 'none';
+            formError.textContent = 'Error sending booking: ' + error.message;
         }
-    </script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+    });
+
+    function validateEmail(email) {
+        // Simple email regex
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+</script>
 </body>
 </html>
