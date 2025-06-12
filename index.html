@@ -6,6 +6,8 @@
     <meta name="description" content="Explore unforgettable travel experiences with NOMAA Tours, Adventures, & More.">
     <title>NOMAA Tours, Adventures, and More</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Link to Google Fonts for 'Inter' as used in styles.css -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -114,9 +116,9 @@
             </div>
             <!-- Add your images here -->
             <div class="image-gallery">
-                <!-- Example placeholders, replace with your images -->
-                <img src="images/bnb1.jpg" alt="Cozy Jamaican Bed and Breakfast" />
-                <img src="images/crochet-workshop.jpg" alt="Jamaican Crochet Workshop" />
+                <!-- Fallback placeholders added for robustness -->
+                <img src="images/bnb1.jpg" alt="Cozy Jamaican Bed and Breakfast" onerror="this.onerror=null;this.src='https://placehold.co/600x400/007A3D/FFFFFF?text=B%26B+Placeholder';" />
+                <img src="images/crochet-workshop.jpg" alt="Jamaican Crochet Workshop" onerror="this.onerror=null;this.src='https://placehold.co/600x400/FEC700/2D2926?text=Crochet+Placeholder';" />
             </div>
         </div>
     </section>
@@ -130,8 +132,8 @@
             <a href="#contact" class="btn btn-primary">Request a Quote</a>
             <!-- Optionally, add event-themed images -->
             <div class="image-gallery">
-                <img src="images/wedding.jpg" alt="Jamaican Beach Wedding" />
-                <img src="images/party.jpg" alt="Jamaican Celebration Party" />
+                <img src="images/wedding.jpg" alt="Jamaican Beach Wedding" onerror="this.onerror=null;this.src='https://placehold.co/600x400/17a2b8/FFFFFF?text=Wedding+Placeholder';" />
+                <img src="images/party.jpg" alt="Jamaican Celebration Party" onerror="this.onerror=null;this.src='https://placehold.co/600x400/4CAF50/FFFFFF?text=Party+Placeholder';" />
             </div>
         </div>
     </section>
@@ -168,22 +170,22 @@
             <p>Take a peek at some of the breathtaking destinations we offer.</p>
             <div class="gallery-container">
                 <div class="gallery-item">
-                    <img src="images/1.jpg" alt="Jamaica beach">
+                    <img src="images/1.jpg" alt="Jamaica beach" onerror="this.onerror=null;this.src='https://placehold.co/400x300/4CAF50/FFFFFF?text=Beach+1';" />
                 </div>
                 <div class="gallery-item">
-                    <img src="images/2.jpg" alt="Blue mountain">
+                    <img src="images/2.jpg" alt="Blue mountain" onerror="this.onerror=null;this.src='https://placehold.co/400x300/17a2b8/FFFFFF?text=Mountain+2';" />
                 </div>
                 <div class="gallery-item">
-                    <img src="images/3.jpg" alt="Waterfall">
+                    <img src="images/3.jpg" alt="Waterfall" onerror="this.onerror=null;this.src='https://placehold.co/400x300/4CAF50/FFFFFF?text=Waterfall+3';" />
                 </div>
                 <div class="gallery-item">
-                    <img src="images/4.jpg" alt="Jamaica sunset">
+                    <img src="images/4.jpg" alt="Jamaica sunset" onerror="this.onerror=null;this.src='https://placehold.co/400x300/17a2b8/FFFFFF?text=Sunset+4';" />
                 </div>
                 <div class="gallery-item">
-                    <img src="images/5.jpg" alt="Jamaican culture">
+                    <img src="images/5.jpg" alt="Jamaican culture" onerror="this.onerror=null;this.src='https://placehold.co/400x300/4CAF50/FFFFFF?text=Culture+5';" />
                 </div>
                 <div class="gallery-item">
-                    <img src="images/6.jpg" alt="Tropical forest">
+                    <img src="images/6.jpg" alt="Tropical forest" onerror="this.onerror=null;this.src='https://placehold.co/400x300/17a2b8/FFFFFF?text=Forest+6';" />
                 </div>
             </div>
         </div>
@@ -194,7 +196,7 @@
             <h2>Contact Us</h2>
             <p>Email: Nomaaadventoursandmorejamaica@gmail.com</p>
             <p>Phone: 876-405-9605 | 876-830-2712 | 876-484-7700</p>
-            <p>Facebook: <a href="https://www.facebook.com/NomaaAdventoursAndMoreJamaica" target="_blank">Nomaa Adventours and More Jamaica</a></p>
+            <p>Facebook: <a href="https://www.facebook.com/NomaaAdventoursAndMoreJamaica" target="_blank" rel="noopener noreferrer">Nomaa Adventours and More Jamaica</a></p>
             <div id="map"></div>
         </div>
     </section>
@@ -238,12 +240,12 @@
             document.getElementById('tourName').value = tourName;
             document.getElementById('tourPrice').value = tourPrice;
             document.getElementById('bookingForm').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when form is open
         }
 
         function closeBookingForm() {
             document.getElementById('bookingForm').style.display = 'none';
-            document.body.style.overflow = '';
+            document.body.style.overflow = ''; // Restore scrolling
             // Reset form and error messages
             document.getElementById('bookTourForm').reset();
             document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
@@ -304,7 +306,7 @@
 
             const selectedDate = new Date(date);
             const today = new Date();
-            today.setHours(0, 0, 0, 0);
+            today.setHours(0, 0, 0, 0); // Reset hours for accurate date comparison
             if (!date) {
                 document.getElementById('date-error').textContent = 'Please select a tour date.';
                 hasErrors = true;
@@ -320,7 +322,8 @@
             document.querySelector('.loading-indicator').style.display = 'block';
             document.getElementById('form-message').textContent = '';
 
-            // Send form data to Vercel serverless function
+            // This fetch request sends data to your serverless function (send-email.js)
+            // which will handle sending actual emails.
             fetch('/api/send-email', {
                 method: 'POST',
                 headers: {
@@ -337,37 +340,88 @@
             })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    // If the serverless function returns an error (e.g., 400, 500)
+                    // it will be caught here.
+                    return response.json().then(errData => {
+                        throw new Error(errData.error || 'Network response was not ok');
+                    });
                 }
-                return response.text();
+                return response.json(); // Assuming the serverless function returns JSON
             })
             .then(data => {
                 document.querySelector('.loading-indicator').style.display = 'none';
-                document.getElementById('form-message').textContent = data;
-                if (data.includes('Thank you')) {
+                // Display the success message from the serverless function
+                document.getElementById('form-message').textContent = data.message;
+                if (data.success) { // Check for a success flag from the serverless function
                     document.getElementById('bookTourForm').reset();
-                    setTimeout(closeBookingForm, 2000);
+                    setTimeout(closeBookingForm, 3000); // Close after 3 seconds on success
                 }
             })
             .catch(error => {
                 document.querySelector('.loading-indicator').style.display = 'none';
-                document.getElementById('form-message').textContent = 'An error occurred. Please try again.';
-                console.error('Error:', error);
+                document.getElementById('form-message').textContent = `Booking failed: ${error.message}`;
+                console.error('Error submitting booking:', error);
             });
+
+            // IMPORTANT: The Gemini API call for generating a confirmation message
+            // was previously here. If you wish to use it for *client-side* message
+            // generation (separate from email sending), you would re-add it here.
+            // Example:
+            /*
+            const prompt = `Generate a confirmation message for a tour booking.
+            Booking Details:
+            Tour Name: ${tourName}
+            Price: $${tourPrice}
+            Date: ${date}
+            Customer Name: ${name}
+            Email: ${email}
+            Phone: ${phone}
+
+            The message should be polite, confirm the booking details, and state that the customer will be contacted shortly for payment and further arrangements.`;
+
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+            const payload = { contents: chatHistory };
+            const apiKey = ""; // Canvas will provide this at runtime.
+
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const confirmationMessage = result.candidates[0].content.parts[0].text;
+                    // You might append this to the form-message or show it in a different dialog
+                    // document.getElementById('form-message').textContent += '\n' + confirmationMessage;
+                }
+            })
+            .catch(error => {
+                console.error('Error calling Gemini API for confirmation message:', error);
+            });
+            */
         });
 
+        // Event listener for Escape key to close booking form
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeBookingForm();
             }
         });
 
+        // Event listener to close booking form when clicking outside the content
         document.getElementById('bookingForm').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeBookingForm();
             }
         });
 
+        // Smooth scrolling for navigation links
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -377,48 +431,48 @@
             });
         });
 
+        // Initialize Map
         function initMap() {
-            // Jamaica coordinates
-            const jamaica = { lat: 18.1096, lng: -77.2975 };
-            
-            const map = new google.maps.Map(document.getElementById('map'), {
-                center: jamaica,
-                zoom: 8,
-                styles: [
-                    {
-                        "featureType": "water",
-                        "elementType": "geometry",
-                        "stylers": [{"color": "#e9e9e9"},{"lightness": 17}]
-                    },
-                    {
-                        "featureType": "landscape",
-                        "elementType": "geometry",
-                        "stylers": [{"color": "#f5f5f5"},{"lightness": 20}]
-                    },
-                    {
-                        "featureType": "road.highway",
-                        "elementType": "geometry.fill",
-                        "stylers": [{"color": "#ffffff"},{"lightness": 17}]
-                    }
-                ]
-            });
-            
-            const marker = new google.maps.Marker({
-                position: jamaica,
-                map: map,
-                title: 'NOMAA Tours',
-                animation: google.maps.Animation.DROP
-            });
-            
-            const infoWindow = new google.maps.InfoWindow({
-                content: '<div><strong>NOMAA Tours, Adventures, & More</strong><br>Jamaica<br>Phone: 876-405-9605</div>'
-            });
-            
-            marker.addListener('click', function() {
-                infoWindow.open(map, marker);
-            });
+            const mapDiv = document.getElementById('map');
+            if (mapDiv) {
+                // Using iframe for Google Maps. Replace YOUR_API_KEY with your actual Google Maps API key
+                mapDiv.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d384073.4984277789!2d-77.58434771971794!3d18.069416551608035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8edb31498b0a96f1%3A0x6b4f7a0c5c3c0a52!2sJamaica!5e0!3m2!1sen!2sus!4v1701723456789!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+                mapDiv.style.borderRadius = 'var(--border-radius-base)'; // Apply border radius from CSS
+            }
+            // For a more interactive map with markers/custom styles, you would load the Google Maps JavaScript API
+            // and initialize the map like this (requires a valid API key enabled for Maps JavaScript API):
+            /*
+            if (typeof google !== 'undefined' && google.maps) {
+                const jamaica = { lat: 18.1096, lng: -77.2975 };
+                const map = new google.maps.Map(document.getElementById('map'), {
+                    center: jamaica,
+                    zoom: 8,
+                    styles: [
+                        { "featureType": "water", "elementType": "geometry", "stylers": [{"color": "#e9e9e9"},{"lightness": 17}] },
+                        { "featureType": "landscape", "elementType": "geometry", "stylers": [{"color": "#f5f5f5"},{"lightness": 20}] },
+                        { "featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{"color": "#ffffff"},{"lightness": 17}] }
+                    ]
+                });
+                const marker = new google.maps.Marker({
+                    position: jamaica,
+                    map: map,
+                    title: 'NOMAA Tours',
+                    animation: google.maps.Animation.DROP
+                });
+                const infoWindow = new google.maps.InfoWindow({
+                    content: '<div><strong>NOMAA Tours, Adventures, & More</strong><br>Jamaica<br>Phone: 876-405-9605</div>'
+                });
+                marker.addListener('click', function() {
+                    infoWindow.open(map, marker);
+                });
+            }
+            */
         }
+
+        // Call initMap when the window loads
+        window.onload = initMap;
     </script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+    <!-- REMINDER: For a dynamic Google Map, uncomment the following line and replace YOUR_API_KEY -->
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script> -->
 </body>
 </html>
