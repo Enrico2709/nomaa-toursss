@@ -1,238 +1,254 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Explore unforgettable travel experiences with NOMAA Tours, Adventures, & More.">
-    <title>NOMAA Tours, Adventures, and More</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Link to Google Fonts for 'Inter' as used in styles.css -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Explore unforgettable travel experiences with NOMAA Tours, Adventures, &amp; More in Jamaica. Discover culture, nature, and relaxation." name="description"/>
+<meta content="Jamaica tours, adventure travel, cultural experiences, eco-tourism, beach vacations, NOMAA Tours, Jamaican holidays" name="keywords"/>
+<meta content="NOMAA Tours, Adventures, &amp; More" name="author"/>
+<link href="https://www.nomaatoursjamaica.com/" rel="canonical"/>
+<!-- Open Graph / Facebook -->
+<meta content="NOMAA Tours, Adventures, &amp; More - Explore Jamaica" property="og:title"/>
+<meta content="Unforgettable tours and cultural experiences across Jamaica. Book your adventure today!" property="og:description"/>
+<meta content="https://www.nomaatoursjamaica.com/images/1.jpg" property="og:image"/>
+<meta content="https://www.nomaatoursjamaica.com/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="NOMAA Tours, Adventures, &amp; More - Explore Jamaica" name="twitter:title"/>
+<meta content="Unforgettable tours and cultural experiences across Jamaica. Book your adventure today!" name="twitter:description"/>
+<meta content="https://www.nomaatoursjamaica.com/images/1.jpg" name="twitter:image"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<!-- Structured Data -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    "name": "NOMAA Tours, Adventures, & More",
+    "description": "Explore Jamaica with NOMAA Tours. Adventure, culture, and relaxation await!",
+    "image": "https://www.nomaatoursjamaica.com/images/1.jpg",
+    "url": "https://www.nomaatoursjamaica.com/",
+    "provider": {
+      "@type": "Organization",
+      "name": "NOMAA Tours, Adventures, & More",
+      "url": "https://www.nomaatoursjamaica.com/",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-876-405-9605",
+        "contactType": "Customer Service"
+      }
+    },
+    "touristType": "Adventure, Culture, Family, Nature"
+  }
+  </script>
+<title>NOMAA Tours, Adventures, and More</title>
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to NOMAA Tours, Adventures, & More</h1>
-        <p>Explore the world with unforgettable experiences</p>
-    </header>
-
-    <nav>
-        <a href="#about">About Us</a>
-        <a href="#tours">Tours & Packages</a>
-        <a href="#accommodations-crafts">Accommodations & Crafts</a>
-        <a href="#events-celebrations">Events & Celebrations</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact Us</a>
-    </nav>
-
-    <div class="slideshow">
-        <div class="slide active" style="background-image: url('images/1.jpg');">
-            <img src="images/1.jpg" alt="Scenic landscape" style="display: none;">
-        </div>
-        <div class="slide" style="background-image: url('images/2.jpg');">
-            <img src="images/2.jpg" alt="Beautiful beach" style="display: none;">
-        </div>
-        <div class="slide" style="background-image: url('images/3.jpg');">
-            <img src="images/3.jpg" alt="Mountain view" style="display: none;">
-        </div>
-        <div class="slide" style="background-image: url('images/4.jpg');">
-            <img src="images/4.jpg" alt="Tropical forest" style="display: none;">
-        </div>
-        <noscript>
-            <img src="images/default.jpg" alt="Default image" style="width: 100%; height: auto;">
-        </noscript>
-        <div class="overlay">
-            <p>Your adventure starts here!</p>
-        </div>
-    </div>
-
-    <section id="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>We are a local tour company dedicated to providing exceptional travel experiences in Jamaica. With years of experience and deep local knowledge, our passionate team ensures every guest discovers the authentic beauty of our island paradise.</p>
-            <p>At NOMAA Tours, we combine adventure, culture, and relaxation to create unforgettable journeys that showcase the best of Jamaica. From hidden waterfalls and secluded beaches to vibrant cultural experiences, we'll guide you through the heart and soul of our beautiful country.</p>
-        </div>
-    </section>
-
-    <section id="tours">
-        <div class="container">
-            <h2>Our Tours & Packages</h2>
-            <p>Choose from a variety of tours tailored to suit your preferences. <strong>Adventure Awaits!</strong></p>
-
-            <div class="packages">
-                <div class="package">
-                    <h3>Jamaica Adventure Tour</h3>
-                    <p>Explore the best of Jamaica with this adventure-packed tour. From the Blue Mountains to the stunning beaches of Negril, this tour has it all.</p>
-    
-                    <button onclick="showBookingForm('Jamaica Adventure Tour');">Book Now</button>
-                </div>
-
-                <div class="package">
-                    <h3>Culture & Heritage Tour</h3>
-                    <p>Immerse yourself in Jamaican history and culture. Visit iconic landmarks, experience authentic local cuisine, and learn about the island's rich heritage.</p>
-                    <button onclick="showBookingForm('Culture & Heritage Tour');">Book Now</button>
-                </div>
-
-                <div class="package">
-                    <h3>Beach Relaxation Package</h3>
-                    <p>Unwind on Jamaica's most beautiful beaches. This package includes access to exclusive resorts, beachfront accommodations, and spa treatments.</p>
-                    <button onclick="showBookingForm('Beach Relaxation Package');">Book Now</button>
-                </div>
-
-                <div class="package">
-                    <h3>Eco-Tourism & Nature Escape</h3>
-                    <p>For nature lovers! Explore hidden waterfalls, hike through lush forests, and experience the natural beauty of Jamaica like never before.</p>
-                    <button onclick="showBookingForm('Eco-Tourism & Nature Escape');">Book Now</button>
-                </div>
-
-                <div class="package">
-                    <h3>Family Fun Tour</h3>
-                    <p>Perfect for families! Enjoy a mix of adventure, culture, and relaxation with activities that all ages can enjoy.</p>
-                   
-                    <button onclick="showBookingForm('Family Fun Tour');">Book Now</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Accommodations & Local Crafts Section -->
-    <section id="accommodations-crafts" class="new-section">
-        <div class="container">
-            <h2>Accommodations & Local Crafts</h2>
-            <div class="content-block">
-                <div class="text-content">
-                    <h3>Bed and Breakfast Stays</h3>
-                    <p>Experience the warmth of Jamaican hospitality with our curated Bed and Breakfast options. Stay in charming, locally-run establishments that offer an authentic taste of island living.</p>
-                    <a href="#contact" class="btn btn-primary">Inquire About B&B Stays</a>
-                </div>
-                <div class="text-content">
-                    <h3>Crochet Workshops & Craft Sales</h3>
-                    <p>Immerse yourself in our vibrant culture with crochet workshops and unique craft experiences. Learn the art of traditional Jamaican crochet and take home a handmade souvenir, or find beautiful, locally-made items.</p>
-                    <a href="#contact" class="btn btn-secondary">Book a Crochet Experience</a>
-                </div>
-            </div>
-            <!-- Add your images here -->
-            <div class="image-gallery">
-                <!-- Fallback placeholders added for robustness -->
-                <img src="images/bnb1.jpg" alt="Cozy Jamaican Bed and Breakfast" onerror="this.onerror=null;this.src='https://placehold.co/600x400/007A3D/FFFFFF?text=B%26B+Placeholder';" />
-                <img src="images/crochet-workshop.jpg" alt="Jamaican Crochet Workshop" onerror="this.onerror=null;this.src='https://placehold.co/600x400/FEC700/2D2926?text=Crochet+Placeholder';" />
-            </div>
-        </div>
-    </section>
-
-    <!-- Events & Celebrations Section -->
-    <section id="events-celebrations" class="new-section">
-        <div class="container">
-            <h2>Events & Celebrations</h2>
-            <p>Let NOMAA Tours help you plan your unforgettable special occasion in Jamaica. From intimate beach weddings to vibrant birthday parties and significant family celebrations, we offer comprehensive event planning and coordination services.</p>
-            <p>Our team works with you to create a seamless and memorable event, handling everything from venue selection and catering to local entertainment and personalized itineraries. Make your special moments truly magical against the backdrop of our beautiful island.</p>
-            <a href="#contact" class="btn btn-primary">Request a Quote</a>
-            <!-- Optionally, add event-themed images -->
-            <div class="image-gallery">
-                <img src="images/wedding.jpg" alt="Jamaican Beach Wedding" onerror="this.onerror=null;this.src='https://placehold.co/600x400/17a2b8/FFFFFF?text=Wedding+Placeholder';" />
-                <img src="images/party.jpg" alt="Jamaican Celebration Party" onerror="this.onerror=null;this.src='https://placehold.co/600x400/4CAF50/FFFFFF?text=Party+Placeholder';" />
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonials">
-        <div class="container">
-            <h2>What Our Clients Say</h2>
-            <div class="testimonials-container">
-                <div class="testimonial">
-                    <blockquote>
-                        <p>"This was the best trip of my life! The guides were knowledgeable and friendly, and we got to experience the true Jamaica. Highly recommend."</p>
-                        <cite>- Sarah Johnson, New York</cite>
-                    </blockquote>
-                </div>
-                <div class="testimonial">
-                    <blockquote>
-                        <p>"The Beach Relaxation Package exceeded all expectations. The staff made us feel like family, and the beaches were absolutely stunning."</p>
-                        <cite>- Mark and Lisa Thompson, Canada</cite>
-                    </blockquote>
-                </div>
-                <div class="testimonial">
-                    <blockquote>
-                        <p>"We did the Family Fun Tour with our kids and it was perfect - everyone from our 8-year-old to our teenagers found something to love!"</p>
-                        <cite>- The Wilson Family, London</cite>
-                    </blockquote>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="gallery">
-        <div class="container">
-            <h2>Gallery</h2>
-            <p>Take a peek at some of the breathtaking destinations we offer.</p>
-            <div class="gallery-container">
-                <div class="gallery-item">
-                    <img src="images/1.jpg" alt="Jamaica beach" onerror="this.onerror=null;this.src='https://placehold.co/400x300/4CAF50/FFFFFF?text=Beach+1';" />
-                </div>
-                <div class="gallery-item">
-                    <img src="images/2.jpg" alt="Blue mountain" onerror="this.onerror=null;this.src='https://placehold.co/400x300/17a2b8/FFFFFF?text=Mountain+2';" />
-                </div>
-                <div class="gallery-item">
-                    <img src="images/3.jpg" alt="Waterfall" onerror="this.onerror=null;this.src='https://placehold.co/400x300/4CAF50/FFFFFF?text=Waterfall+3';" />
-                </div>
-                <div class="gallery-item">
-                    <img src="images/4.jpg" alt="Jamaica sunset" onerror="this.onerror=null;this.src='https://placehold.co/400x300/17a2b8/FFFFFF?text=Sunset+4';" />
-                </div>
-                <div class="gallery-item">
-                    <img src="images/5.jpg" alt="Jamaican culture" onerror="this.onerror=null;this.src='https://placehold.co/400x300/4CAF50/FFFFFF?text=Culture+5';" />
-                </div>
-                <div class="gallery-item">
-                    <img src="images/6.jpg" alt="Tropical forest" onerror="this.onerror=null;this.src='https://placehold.co/400x300/17a2b8/FFFFFF?text=Forest+6';" />
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>Email: Nomaaadventoursandmorejamaica@gmail.com</p>
-            <p>Phone: 876-405-9605 | 876-830-2712 | 876-484-7700</p>
-            <p>Facebook: <a href="https://www.facebook.com/NomaaAdventoursAndMoreJamaica" target="_blank" rel="noopener noreferrer">Nomaa Adventours and More Jamaica</a></p>
-            <div id="map"></div>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2025 NOMAA Tours, Adventures, & More. All rights reserved. One Love,One Jamaica!</p>
-    </footer>
-
-    <div class="booking-form" id="bookingForm">
-        <div class="booking-form-content">
-            <h3>Book Your Tour Now</h3>
-            <form id="bookTourForm">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required />
-                <div id="name-error" class="error-message"></div>
-
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" placeholder="Your Email" required />
-                <div id="email-error" class="error-message"></div>
-
-                <label for="phone">Your Phone Number:</label>
-                <input type="text" id="phone" name="phone" placeholder="Your Phone Number" required />
-                <div id="phone-error" class="error-message"></div>
-
-                <label for="date">Tour Date:</label>
-                <input type="date" id="date" name="date" required />
-                <div id="date-error" class="error-message"></div>
-
-                <input type="hidden" id="tourName" name="tourName" />
-                <input type="hidden" id="tourPrice" name="tourPrice" />
-                <button type="submit">Submit</button>
-                <button type="button" onclick="closeBookingForm();">Close</button>
-                <div class="loading-indicator" style="display: none;">Processing...</div>
-                <div id="form-message" style="margin-top: 10px;"></div>
-            </form>
-        </div>
-    </div>
-
-    <script>
+<header>
+<h1>Welcome to NOMAA Tours, Adventures, &amp; More</h1>
+<p>Explore the world with unforgettable experiences</p>
+</header>
+<nav>
+<a href="#about">About Us</a>
+<a href="#tours">Tours &amp; Packages</a>
+<a href="#accommodations-crafts">Accommodations &amp; Crafts</a>
+<a href="#events-celebrations">Events &amp; Celebrations</a>
+<a href="#testimonials">Testimonials</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact Us</a>
+</nav>
+<div class="slideshow">
+<div class="slide active" style="background-image: url('images/1.jpg');">
+<img alt="Scenic landscape" src="images/1.jpg" style="display: none;"/>
+</div>
+<div class="slide" style="background-image: url('images/2.jpg');">
+<img alt="Beautiful beach" src="images/2.jpg" style="display: none;"/>
+</div>
+<div class="slide" style="background-image: url('images/3.jpg');">
+<img alt="Mountain view" src="images/3.jpg" style="display: none;"/>
+</div>
+<div class="slide" style="background-image: url('images/4.jpg');">
+<img alt="Tropical forest" src="images/4.jpg" style="display: none;"/>
+</div>
+<noscript>
+<img alt="Default image" src="images/default.jpg" style="width: 100%; height: auto;"/>
+</noscript>
+<div class="overlay">
+<p>Your adventure starts here!</p>
+</div>
+</div>
+<section id="about">
+<div class="container">
+<h2>About Us</h2>
+<p>We are a local tour company dedicated to providing exceptional travel experiences in Jamaica. With years of experience and deep local knowledge, our passionate team ensures every guest discovers the authentic beauty of our island paradise.</p>
+<p>At NOMAA Tours, we combine adventure, culture, and relaxation to create unforgettable journeys that showcase the best of Jamaica. From hidden waterfalls and secluded beaches to vibrant cultural experiences, we'll guide you through the heart and soul of our beautiful country.</p>
+</div>
+</section>
+<section id="tours">
+<div class="container">
+<h2>Our Tours &amp; Packages</h2>
+<p>Choose from a variety of tours tailored to suit your preferences. <strong>Adventure Awaits!</strong></p>
+<div class="packages">
+<div class="package">
+<h3>Jamaica Adventure Tour</h3>
+<p>Explore the best of Jamaica with this adventure-packed tour. From the Blue Mountains to the stunning beaches of Negril, this tour has it all.</p>
+<button onclick="showBookingForm('Jamaica Adventure Tour');">Book Now</button>
+</div>
+<div class="package">
+<h3>Culture &amp; Heritage Tour</h3>
+<p>Immerse yourself in Jamaican history and culture. Visit iconic landmarks, experience authentic local cuisine, and learn about the island's rich heritage.</p>
+<button onclick="showBookingForm('Culture &amp; Heritage Tour');">Book Now</button>
+</div>
+<div class="package">
+<h3>Beach Relaxation Package</h3>
+<p>Unwind on Jamaica's most beautiful beaches. This package includes access to exclusive resorts, beachfront accommodations, and spa treatments.</p>
+<button onclick="showBookingForm('Beach Relaxation Package');">Book Now</button>
+</div>
+<div class="package">
+<h3>Eco-Tourism &amp; Nature Escape</h3>
+<p>For nature lovers! Explore hidden waterfalls, hike through lush forests, and experience the natural beauty of Jamaica like never before.</p>
+<button onclick="showBookingForm('Eco-Tourism &amp; Nature Escape');">Book Now</button>
+</div>
+<div class="package">
+<h3>Family Fun Tour</h3>
+<p>Perfect for families! Enjoy a mix of adventure, culture, and relaxation with activities that all ages can enjoy.</p>
+<button onclick="showBookingForm('Family Fun Tour');">Book Now</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Accommodations & Local Crafts Section -->
+<section class="new-section" id="accommodations-crafts">
+<div class="container">
+<h2>Accommodations &amp; Local Crafts</h2>
+<div class="content-block">
+<div class="text-content">
+<h3>Bed and Breakfast Stays</h3>
+<p>Experience the warmth of Jamaican hospitality with our curated Bed and Breakfast options. Stay in charming, locally-run establishments that offer an authentic taste of island living.</p>
+<a class="btn btn-primary" href="#contact">Inquire About B&amp;B Stays</a>
+</div>
+<div class="text-content">
+<h3>Crochet Workshops &amp; Craft Sales</h3>
+<p>Immerse yourself in our vibrant culture with crochet workshops and unique craft experiences. Learn the art of traditional Jamaican crochet and take home a handmade souvenir, or find beautiful, locally-made items.</p>
+<a class="btn btn-secondary" href="#contact">Book a Crochet Experience</a>
+</div>
+</div>
+<!-- Add your images here -->
+<div class="image-gallery">
+<!-- Fallback placeholders added for robustness -->
+<img alt="Cozy Jamaican Bed and Breakfast" onerror="this.onerror=null;this.src='https://placehold.co/600x400/007A3D/FFFFFF?text=B%26B+Placeholder';" src="images/bnb1.jpg">
+<img alt="Jamaican Crochet Workshop" onerror="this.onerror=null;this.src='https://placehold.co/600x400/FEC700/2D2926?text=Crochet+Placeholder';" src="images/crochet-workshop.jpg">
+</img></img></div>
+</div>
+</section>
+<!-- Events & Celebrations Section -->
+<section class="new-section" id="events-celebrations">
+<div class="container">
+<h2>Events &amp; Celebrations</h2>
+<p>Let NOMAA Tours help you plan your unforgettable special occasion in Jamaica. From intimate beach weddings to vibrant birthday parties and significant family celebrations, we offer comprehensive event planning and coordination services.</p>
+<p>Our team works with you to create a seamless and memorable event, handling everything from venue selection and catering to local entertainment and personalized itineraries. Make your special moments truly magical against the backdrop of our beautiful island.</p>
+<a class="btn btn-primary" href="#contact">Request a Quote</a>
+<!-- Optionally, add event-themed images -->
+<div class="image-gallery">
+<img alt="Jamaican Beach Wedding" onerror="this.onerror=null;this.src='https://placehold.co/600x400/17a2b8/FFFFFF?text=Wedding+Placeholder';" src="images/wedding.jpg">
+<img alt="Jamaican Celebration Party" onerror="this.onerror=null;this.src='https://placehold.co/600x400/4CAF50/FFFFFF?text=Party+Placeholder';" src="images/party.jpg">
+</img></img></div>
+</div>
+</section>
+<section id="testimonials">
+<div class="container">
+<h2>What Our Clients Say</h2>
+<div class="testimonials-container">
+<div class="testimonial">
+<blockquote>
+<p>"This was the best trip of my life! The guides were knowledgeable and friendly, and we got to experience the true Jamaica. Highly recommend."</p>
+<cite>- Sarah Johnson, New York</cite>
+</blockquote>
+</div>
+<div class="testimonial">
+<blockquote>
+<p>"The Beach Relaxation Package exceeded all expectations. The staff made us feel like family, and the beaches were absolutely stunning."</p>
+<cite>- Mark and Lisa Thompson, Canada</cite>
+</blockquote>
+</div>
+<div class="testimonial">
+<blockquote>
+<p>"We did the Family Fun Tour with our kids and it was perfect - everyone from our 8-year-old to our teenagers found something to love!"</p>
+<cite>- The Wilson Family, London</cite>
+</blockquote>
+</div>
+</div>
+</div>
+</section>
+<section id="gallery">
+<div class="container">
+<h2>Gallery</h2>
+<p>Take a peek at some of the breathtaking destinations we offer.</p>
+<div class="gallery-container">
+<div class="gallery-item">
+<img alt="Jamaica beach" onerror="this.onerror=null;this.src='https://placehold.co/400x300/4CAF50/FFFFFF?text=Beach+1';" src="images/1.jpg">
+</img></div>
+<div class="gallery-item">
+<img alt="Blue mountain" onerror="this.onerror=null;this.src='https://placehold.co/400x300/17a2b8/FFFFFF?text=Mountain+2';" src="images/2.jpg"/>
+</div>
+<div class="gallery-item">
+<img alt="Waterfall" onerror="this.onerror=null;this.src='https://placehold.co/400x300/4CAF50/FFFFFF?text=Waterfall+3';" src="images/3.jpg"/>
+</div>
+<div class="gallery-item">
+<img alt="Jamaica sunset" onerror="this.onerror=null;this.src='https://placehold.co/400x300/17a2b8/FFFFFF?text=Sunset+4';" src="images/4.jpg"/>
+</div>
+<div class="gallery-item">
+<img alt="Jamaican culture" onerror="this.onerror=null;this.src='https://placehold.co/400x300/4CAF50/FFFFFF?text=Culture+5';" src="images/5.jpg"/>
+</div>
+<div class="gallery-item">
+<img alt="Tropical forest" onerror="this.onerror=null;this.src='https://placehold.co/400x300/17a2b8/FFFFFF?text=Forest+6';" src="images/6.jpg"/>
+</div>
+</div>
+</div>
+</section>
+<section id="contact">
+<div class="container">
+<h2>Contact Us</h2>
+<p>Email: Nomaaadventoursandmorejamaica@gmail.com</p>
+<p>Phone: 876-405-9605 | 876-830-2712 | 876-484-7700</p>
+<p>Facebook: <a href="https://www.facebook.com/NomaaAdventoursAndMoreJamaica" rel="noopener noreferrer" target="_blank">Nomaa Adventours and More Jamaica</a></p>
+<div id="map"></div>
+</div>
+</section>
+<footer>
+<p>© 2025 NOMAA Tours, Adventures, &amp; More. All rights reserved. One Love,One Jamaica!</p>
+</footer>
+<div class="booking-form" id="bookingForm">
+<div class="booking-form-content">
+<h3>Book Your Tour Now</h3>
+<form id="bookTourForm">
+<label for="name">Your Name:</label>
+<input id="name" name="name" placeholder="Your Name" required="" type="text"/>
+<div class="error-message" id="name-error"></div>
+<label for="email">Your Email:</label>
+<input id="email" name="email" placeholder="Your Email" required="" type="email"/>
+<div class="error-message" id="email-error"></div>
+<label for="phone">Your Phone Number:</label>
+<input id="phone" name="phone" placeholder="Your Phone Number" required="" type="text"/>
+<div class="error-message" id="phone-error"></div>
+<label for="date">Tour Date:</label>
+<input id="date" name="date" required="" type="date"/>
+<div class="error-message" id="date-error"></div>
+<input id="tourName" name="tourName" type="hidden"/>
+<input id="tourPrice" name="tourPrice" type="hidden"/>
+<button type="submit">Submit</button>
+<button onclick="closeBookingForm();" type="button">Close</button>
+<div class="loading-indicator" style="display: none;">Processing...</div>
+<div id="form-message" style="margin-top: 10px;"></div>
+</form>
+</div>
+</div>
+<script>
         function showBookingForm(tourName, tourPrice) {
             document.getElementById('tourName').value = tourName;
             document.getElementById('tourPrice').value = tourPrice;
@@ -469,7 +485,7 @@
         // Call initMap when the window loads
         window.onload = initMap;
     </script>
-    <!-- REMINDER: For a dynamic Google Map, uncomment the following line and replace YOUR_API_KEY -->
-    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script> -->
+<!-- REMINDER: For a dynamic Google Map, uncomment the following line and replace YOUR_API_KEY -->
+<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script> -->
 </body>
 </html>
