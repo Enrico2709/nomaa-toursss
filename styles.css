@@ -690,3 +690,15 @@ footer {
         height: 250px;
     }
 }
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.logo-img {
+  max-height: 80px;
+  width: auto;
+}
+
