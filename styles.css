@@ -242,7 +242,7 @@ section h2::after {
     max-height: 600px; /* Max height */
     min-height: 300px;
     overflow: hidden;
-    background-color: #f1f1f1;
+    background-color: #f1f1f1; /* This is a light grey, not a variable. If you want it to be a variable, define one. */
 }
 
 .slide {
@@ -423,16 +423,16 @@ footer {
 }
 
 .booking-form button[type="button"] { /* Style for the close button */
-    background-color: #6c757d; /* Grey for close button */
+    background-color: #6c757d; /* This is a hardcoded grey. If you want it to be a variable, define one. */
     margin-left: 10px; /* Space between buttons */
 }
 
 .booking-form button[type="button"]:hover {
-    background-color: #5a6268;
+    background-color: #5a6268; /* This is a hardcoded grey. If you want it to be a variable, define one. */
 }
 
 .booking-form .error-message {
-    color: #dc3545; /* Bootstrap-like red for errors */
+    color: #dc3545; /* This is a hardcoded red. If you want it to be a variable, define one. */
     font-size: 0.85em;
     margin-top: -5px; /* Adjust margin */
     margin-bottom: 10px;
@@ -652,7 +652,7 @@ footer {
 #events-celebrations {
     text-align: center;
     padding: 60px 15px; /* More padding */
-    background-color: #F8FCFB; /* A slightly different light background */
+    background-color: var(--light-bg); /* Using light-bg variable */
 }
 
 #events-celebrations p {
