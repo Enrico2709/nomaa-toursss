@@ -48,44 +48,35 @@ header p {
 }
 
 /* Navigation: Enhanced hover and focus states */
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  flex-wrap: wrap;
-}
-
-.hamburger {
-  display: none;
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: var(--tertiary-color);
-  }
-
-  .nav-menu.active {
+nav {
     display: flex;
-  }
-
-  .nav-menu a {
-    padding: 12px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-  }
+    flex-wrap: wrap;
+    justify-content: center;
+    background: var(--tertiary-color); /* Darker, more solid background */
+    padding: 5px 0; /* Reduced vertical padding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    flex: 1 1 auto;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+    font-weight: 600; /* Slightly bolder */
+}
+
+nav a:hover {
+    background-color: var(--secondary-color); /* Gold hover effect */
+    color: var(--tertiary-color); /* Dark text on gold hover */
+}
+
+nav a:focus,
+button:focus {
+    outline: 2px solid var(--secondary-color); /* Gold outline for focus */
+    outline-offset: 3px; /* More prominent offset */
+}
 
 /* Sections: Consistent padding and backgrounds */
 section {
@@ -711,4 +702,3 @@ footer {
   max-height: 80px;
   width: auto;
 }
-
