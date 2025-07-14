@@ -1,5 +1,4 @@
-FileName: MultipleFiles/styles.css
-FileContents: /* Enhanced Styles for Nomaa Adventours and More Jamaica */
+ /* Enhanced Styles for Nomaa Adventours and More Jamaica */
 
 /* Root Variables: Updated colors for a more vibrant, Jamaican-inspired palette */
 :root {
@@ -10,8 +9,11 @@ FileContents: /* Enhanced Styles for Nomaa Adventours and More Jamaica */
     --tertiary-color: #2D2926; /* Dark brown/black - for text and strong contrasts, inspired by flag */
     --light-bg: #F0F8F6; /* Softer, slightly green-tinted light background */
     --text-dark: var(--tertiary-color); /* Using the new tertiary color for dark text */
-    --text-light: #555;
+    --text-light: #555; /* A medium grey for lighter text */
     --border-radius-base: 8px; /* Consistent rounded corners */
+    --error-color: #dc3545; /* Standard red for error messages */
+    --button-neutral: #6c757d; /* Grey for neutral buttons like close */
+    --button-neutral-hover: #5a6268; /* Darker grey for neutral button hover */
 }
 
 /* Body: Updated font for a more modern and friendly feel */
@@ -242,7 +244,7 @@ section h2::after {
     max-height: 600px; /* Max height */
     min-height: 300px;
     overflow: hidden;
-    background-color: #f1f1f1; /* This is a light grey, not a variable. If you want it to be a variable, define one. */
+    background-color: var(--light-bg); /* Using light-bg variable */
 }
 
 .slide {
@@ -423,16 +425,16 @@ footer {
 }
 
 .booking-form button[type="button"] { /* Style for the close button */
-    background-color: #6c757d; /* This is a hardcoded grey. If you want it to be a variable, define one. */
+    background-color: var(--button-neutral); /* Using variable for neutral button */
     margin-left: 10px; /* Space between buttons */
 }
 
 .booking-form button[type="button"]:hover {
-    background-color: #5a6268; /* This is a hardcoded grey. If you want it to be a variable, define one. */
+    background-color: var(--button-neutral-hover); /* Using variable for neutral button hover */
 }
 
 .booking-form .error-message {
-    color: #dc3545; /* This is a hardcoded red. If you want it to be a variable, define one. */
+    color: var(--error-color); /* Using variable for error color */
     font-size: 0.85em;
     margin-top: -5px; /* Adjust margin */
     margin-bottom: 10px;
