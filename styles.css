@@ -80,7 +80,7 @@ header p {
     right: 15px;
     background: none;
     border: none;
-    color: white;
+    color: white; /* Icon color */
     font-size: 2em;
     cursor: pointer;
     z-index: 1100; /* Above mobile menu overlay */
@@ -88,7 +88,7 @@ header p {
 }
 
 .hamburger-menu:focus {
-    outline: 2px solid var(--secondary-color);
+    outline: 2px solid var(--secondary-color); /* Using secondary color for focus */
     outline-offset: 3px;
 }
 
@@ -119,7 +119,7 @@ body.menu-open .mobile-menu-overlay {
     right: 15px;
     background: none;
     border: none;
-    color: white;
+    color: white; /* Icon color */
     font-size: 2.5em;
     cursor: pointer;
     z-index: 1100;
@@ -127,7 +127,7 @@ body.menu-open .mobile-menu-overlay {
 }
 
 .mobile-menu-close:focus {
-    outline: 2px solid var(--secondary-color);
+    outline: 2px solid var(--secondary-color); /* Using secondary color for focus */
     outline-offset: 3px;
 }
 
@@ -156,8 +156,8 @@ body.menu-open .mobile-menu-overlay {
 
 .mobile-nav a:hover,
 .mobile-nav a:focus {
-    background-color: var(--secondary-color);
-    color: var(--tertiary-color);
+    background-color: var(--secondary-color); /* Gold hover effect */
+    color: var(--tertiary-color); /* Dark text on gold hover */
 }
 
 /* Desktop Navigation */
@@ -681,7 +681,6 @@ footer {
     padding: 2.5rem;
     border-radius: var(--border-radius-base);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
     border-top: 5px solid var(--primary-color); /* Consistent branding */
 }
 
@@ -747,10 +746,6 @@ footer {
     header p {
         font-size: 1em;
     }
-    /* nav a { /* This rule is now for desktop-nav a, but was previously for all nav a */
-    /*    padding: 12px 15px; */
-    /*    font-size: 15px; */
-    /* } */
     .slideshow {
         height: 50vh;
     }
@@ -778,17 +773,6 @@ footer {
     header p {
         font-size: 0.9em;
     }
-    /* nav { /* This rule is now for desktop-nav, but was previously for all nav */
-    /*    flex-direction: column; */
-    /*    position: static; */
-    /* } */
-    /* nav a { /* This rule is now for desktop-nav a, but was previously for all nav a */
-    /*    flex: unset; */
-    /*    width: 100%; */
-    /*    display: block; */
-    /*    padding: 10px 12px; */
-    /*    font-size: 14px; */
-    /* } */
     .slideshow {
         height: 40vh;
     }
