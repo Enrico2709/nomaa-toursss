@@ -8,16 +8,13 @@
 <meta content="Jamaica tours, adventure travel, cultural experiences, eco-tourism, beach vacations, NOMAA Tours, Jamaican holidays" name="keywords"/>
 <meta content="NOMAA Tours, Adventures, &amp; More" name="author"/>
 <link href="https://www.nomaatoursjamaica.com/" rel="canonical"/>
-
 <!-- ✅ Favicon - Your Logo in Browser Tab -->
-<link rel="icon" type="image/jpeg" href="images/logo-nomaa1.jpeg">
-<link rel="apple-touch-icon" sizes="180x180" href="images/logo-nomaa1.jpeg">
-<link rel="icon" type="image/jpeg" sizes="32x32" href="images/logo-nomaa1.jpeg">
-<link rel="icon" type="image/jpeg" sizes="16x16" href="images/logo-nomaa1.jpeg">
-
+<link href="images/logo-nomaa1.jpeg" rel="icon" type="image/jpeg"/>
+<link href="images/logo-nomaa1.jpeg" rel="apple-touch-icon" sizes="180x180"/>
+<link href="images/logo-nomaa1.jpeg" rel="icon" sizes="32x32" type="image/jpeg"/>
+<link href="images/logo-nomaa1.jpeg" rel="icon" sizes="16x16" type="image/jpeg"/>
 <!-- ✅ Font Awesome for social media icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 <!-- Open Graph / Facebook -->
 <meta content="NOMAA Tours, Adventures, &amp; More - Explore Jamaica" property="og:title"/>
 <meta content="Unforgettable tours and cultural experiences across Jamaica. Book your adventure today!" property="og:description"/>
@@ -30,8 +27,8 @@
 <meta content="Unforgettable tours and cultural experiences across Jamaica. Book your adventure today!" name="twitter:description"/>
 <meta content="https://www.nomaatoursjamaica.com/images/1.jpg" name="twitter:image"/>
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="styles.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+<link href="styles.css" rel="stylesheet">
 <!-- Structured Data -->
 <script type="application/ld+json">
   {
@@ -55,31 +52,165 @@
   }
   </script>
 <title>NOMAA AdvenTours and More Jamaica</title>
-</head>
+</link></link><style>
+    :root {
+        --jamaica-green: #007A3D;
+        --jamaica-gold: #FEC700;
+        --dark: #222;
+        --light: #fff;
+        --transition: all 0.3s ease;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        background-color: var(--jamaica-green);
+        color: var(--light);
+        padding: 10px 20px;
+        z-index: 1000;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header .logo-img {
+        height: 40px;
+    }
+
+    nav {
+        display: flex;
+        gap: 15px;
+    }
+
+    nav a {
+        color: var(--light);
+        text-decoration: none;
+        position: relative;
+        padding: 5px;
+    }
+
+    nav a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: var(--jamaica-gold);
+        left: 0;
+        bottom: 0;
+        transition: var(--transition);
+    }
+
+    nav a:hover::after {
+        width: 100%;
+    }
+
+    .mobile-menu {
+        display: none;
+        flex-direction: column;
+        background: var(--jamaica-green);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border: 1px solid var(--jamaica-gold);
+        padding: 10px;
+    }
+
+    .hamburger {
+        display: none;
+        cursor: pointer;
+        font-size: 24px;
+    }
+
+    @media (max-width: 768px) {
+        nav {
+            display: none;
+        }
+
+        .hamburger {
+            display: block;
+        }
+
+        .mobile-menu.show {
+            display: flex;
+        }
+    }
+
+    .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: var(--jamaica-gold);
+        color: var(--dark);
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        z-index: 999;
+    }
+
+    .back-to-top.show {
+        display: block;
+    }
+
+    section {
+        padding: 40px 20px;
+    }
+
+    h2 {
+        color: var(--jamaica-green);
+    }
+
+    .btn {
+        background: var(--jamaica-gold);
+        color: var(--dark);
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .btn:hover {
+        background: var(--jamaica-green);
+        color: var(--light);
+    }
+
+    .focus-visible {
+        outline: 2px dashed var(--jamaica-gold);
+        outline-offset: 4px;
+    }
+    </style></head>
 <body>
 <header>
 <header>
-  <div class="logo">
-    <img src="images/logo-nomaa1.jpeg" alt="NOMAA Tours Logo" class="logo-img">
-  </div>
-  <h1>Welcome to NOMAA AdvenTours &amp; More Jamaica</h1>
-  <p>Explore the world with unforgettable experiences</p>
+<div class="logo">
+<img alt="NOMAA Tours Logo" class="logo-img" src="images/logo-nomaa1.jpeg"/>
+</div>
+<h1>Welcome to NOMAA AdvenTours &amp; More Jamaica</h1>
+<p>Explore the world with unforgettable experiences</p>
 </header>
-
-</header>
+</header><div aria-label="Toggle navigation" class="hamburger" role="button" tabindex="0">☰</div><div class="mobile-menu" id="mobileMenu"><a href="#about">About Us</a><a href="#tours">Tours &amp; Packages</a><a href="#accommodations-crafts">Accommodations &amp; Crafts</a><a href="#events-celebrations">Events &amp; Celebrations</a><a href="#testimonials">Testimonials</a><a href="#gallery">Gallery</a><a href="#contact">Contact Us</a></div>
 <nav>
-<a href="#about">About Us</a>
-<a href="#tours">Tours &amp; Packages</a>
-<a href="#accommodations-crafts">Accommodations &amp; Crafts</a>
-<a href="#events-celebrations">Events &amp; Celebrations</a>
-<a href="#testimonials">Testimonials</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact Us</a>
+
+
+
+
+
+
+
 </nav>
 <div class="slideshow">
 <div class="slide active" style="background-image: url('images/1.jpg');">
-<img alt="Scenic landscape" src="images/1.jpg" style="display: none;"/>
-</div>
+<img alt="Scenic landscape" src="images/1.jpg" style="display: none;">
+</img></div>
 <div class="slide" style="background-image: url('images/2.jpg');">
 <img alt="Beautiful beach" src="images/2.jpg" style="display: none;"/>
 </div>
@@ -155,9 +286,9 @@
 <!-- Add your images here -->
 <div class="image-gallery">
 <!-- Fallback placeholders added for robustness -->
-<img alt="Cozy Jamaican Bed and Breakfast" onerror="this.onerror=null;this.src='https://placehold.co/600x400/007A3D/FFFFFF?text=B%26B+Placeholder';" src="images/bnb1.jpg">
-<img alt="Jamaican Crochet Workshop" onerror="this.onerror=null;this.src='https://placehold.co/600x400/FEC700/2D2926?text=Crochet+Placeholder';" src="images/crochet-workshop.jpg">
-</img></img></div>
+<img alt="Cozy Jamaican Bed and Breakfast" onerror="this.onerror=null;this.src='https://placehold.co/600x400/007A3D/FFFFFF?text=B%26B+Placeholder';" src="images/bnb1.jpg"/>
+<img alt="Jamaican Crochet Workshop" onerror="this.onerror=null;this.src='https://placehold.co/600x400/FEC700/2D2926?text=Crochet+Placeholder';" src="images/crochet-workshop.jpg"/>
+</div>
 </div>
 </section>
 <!-- Events & Celebrations Section -->
@@ -169,9 +300,9 @@
 <a class="btn btn-primary" href="#contact">Request a Quote</a>
 <!-- Optionally, add event-themed images -->
 <div class="image-gallery">
-<img alt="Jamaican Beach Wedding" onerror="this.onerror=null;this.src='https://placehold.co/600x400/17a2b8/FFFFFF?text=Wedding+Placeholder';" src="images/wedding.jpg">
-<img alt="Jamaican Celebration Party" onerror="this.onerror=null;this.src='https://placehold.co/600x400/4CAF50/FFFFFF?text=Party+Placeholder';" src="images/party.jpg">
-</img></img></div>
+<img alt="Jamaican Beach Wedding" onerror="this.onerror=null;this.src='https://placehold.co/600x400/17a2b8/FFFFFF?text=Wedding+Placeholder';" src="images/wedding.jpg"/>
+<img alt="Jamaican Celebration Party" onerror="this.onerror=null;this.src='https://placehold.co/600x400/4CAF50/FFFFFF?text=Party+Placeholder';" src="images/party.jpg"/>
+</div>
 </div>
 </section>
 <section id="testimonials">
@@ -205,8 +336,8 @@
 <p>Take a peek at some of the breathtaking destinations we offer.</p>
 <div class="gallery-container">
 <div class="gallery-item">
-<img alt="Jamaica beach" onerror="this.onerror=null;this.src='https://placehold.co/400x300/4CAF50/FFFFFF?text=Beach+1';" src="images/1.jpg">
-</img></div>
+<img alt="Jamaica beach" onerror="this.onerror=null;this.src='https://placehold.co/400x300/4CAF50/FFFFFF?text=Beach+1';" src="images/1.jpg"/>
+</div>
 <div class="gallery-item">
 <img alt="Blue mountain" onerror="this.onerror=null;this.src='https://placehold.co/400x300/17a2b8/FFFFFF?text=Mountain+2';" src="images/2.jpg"/>
 </div>
@@ -228,58 +359,48 @@
 <div class="gallery-item">
 <img alt="Tropical forest" onerror="this.onerror=null;this.src='https://placehold.co/400x300/17a2b8/FFFFFF?text=Forest+6';" src="images/8.jpg"/>
 </div>
-</section>
+</div></div></section>
 <section id="contact">
-  <div class="container">
-
+<div class="container">
 <!-- Contact Us Section -->
 <section style="text-align: center; padding: 40px 20px; background-color: #f9f9f9;">
-  <h2 style="color: #007A3D; margin-bottom: 20px;">Contact Us</h2>
-
-  <p style="font-size: 18px; margin: 10px 0;">
-    <i class="fas fa-envelope" style="color: #007A3D; margin-right: 8px;"></i>
-    <a href="mailto:Nomaaadventoursandmorejamaica@gmail.com" style="color: #000;">
+<h2 style="color: #007A3D; margin-bottom: 20px;">Contact Us</h2>
+<p style="font-size: 18px; margin: 10px 0;">
+<i class="fas fa-envelope" style="color: #007A3D; margin-right: 8px;"></i>
+<a href="mailto:Nomaaadventoursandmorejamaica@gmail.com" style="color: #000;">
       Nomaaadventoursandmorejamaica@gmail.com
     </a>
-  </p>
-
-  <p style="font-size: 18px; margin: 10px 0;">
-    <i class="fas fa-phone-alt" style="color: #007A3D; margin-right: 8px;"></i>
-    <a href="tel:+18764059605" style="color: #000;">876-405-9605</a> |
-    <a href="tel:+18764847700" style="color: #000;">876-484-7700</a>
-  </p>
-
-
-  <h3 style="text-align: center; color: #007A3D; margin-top: 40px;">
-  <span style="border-bottom: 3px solid #FEC700; padding-bottom: 5px;">Follow Us</span>
-</h3>
-
-<div class="social-icons" style="display: flex; justify-content: center; gap: 30px; margin-top: 15px;">
-  <a href="https://www.instagram.com/nomaa.adventours.and.more" target="_blank" style="color: #E1306C; font-size: 30px;">
-    <i class="fab fa-instagram"></i>
-  </a>
-  <a href="https://www.facebook.com/share/1ADac6DEAq/" target="_blank" style="color: #1877F2; font-size: 30px;">
-    <i class="fab fa-facebook"></i>
-  </a>
-  <a href="https://www.tiktok.com/@nomaaadventoursandmoreja?_t=ZM-8y1Ujyw4cYa&_r=1" target="_blank" style="color: #000000; font-size: 30px;">
-    <i class="fab fa-tiktok"></i>
-  </a>
-  <a href="https://www.youtube.com/@nomaaadventoursandmorejama-u9n" target="_blank" style="color: #FF0000; font-size: 30px;">
-    <i class="fab fa-youtube"></i>
-  </a>
-</div>
-
-</div>
-
-  </div>
-</section>
-
 </p>
-<div aria-label="Map showing NOMAA Tours location" id="map"></div>
+<p style="font-size: 18px; margin: 10px 0;">
+<i class="fas fa-phone-alt" style="color: #007A3D; margin-right: 8px;"></i>
+<a href="tel:+18764059605" style="color: #000;">876-405-9605</a> |
+    <a href="tel:+18764847700" style="color: #000;">876-484-7700</a>
+</p>
+<h3 style="text-align: center; color: #007A3D; margin-top: 40px;">
+<span style="border-bottom: 3px solid #FEC700; padding-bottom: 5px;">Follow Us</span>
+</h3>
+<div class="social-icons" style="display: flex; justify-content: center; gap: 30px; margin-top: 15px;">
+<a href="https://www.instagram.com/nomaa.adventours.and.more" style="color: #E1306C; font-size: 30px;" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+<a href="https://www.facebook.com/share/1ADac6DEAq/" style="color: #1877F2; font-size: 30px;" target="_blank">
+<i class="fab fa-facebook"></i>
+</a>
+<a href="https://www.tiktok.com/@nomaaadventoursandmoreja?_t=ZM-8y1Ujyw4cYa&amp;_r=1" style="color: #000000; font-size: 30px;" target="_blank">
+<i class="fab fa-tiktok"></i>
+</a>
+<a href="https://www.youtube.com/@nomaaadventoursandmorejama-u9n" style="color: #FF0000; font-size: 30px;" target="_blank">
+<i class="fab fa-youtube"></i>
+</a>
 </div>
-</section>
+</section></div>
 
 </section>
+
+<div aria-label="Map showing NOMAA Tours location" id="map"></div>
+
+
+
 <footer>
 <p>© 2025 NOMAA AdvenTours &amp; More Jamaica. All rights reserved. One Love, One Jamaica!</p>
 </footer>
@@ -547,5 +668,37 @@
     </script>
 <!-- REMINDER: For a dynamic Google Map, uncomment the following line and replace YOUR_API_KEY -->
 <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script> -->
-</body>
+<div aria-label="Back to top" class="back-to-top" id="backToTop" role="button">↑</div><script>
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const backToTop = document.getElementById('backToTop');
+
+    hamburger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('show');
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            mobileMenu.classList.remove('show');
+        }
+    });
+
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('show');
+        });
+    });
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    });
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    </script></body>
 </html>
