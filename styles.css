@@ -1,4 +1,5 @@
-/* Enhanced Styles for Nomaa Adventours and More Jamaica */
+FileName: MultipleFiles/styles.css
+FileContents: /* Enhanced Styles for Nomaa Adventours and More Jamaica */
 
 /* Root Variables: Updated colors for a more vibrant, Jamaican-inspired palette */
 :root {
@@ -26,6 +27,23 @@ body {
 /* Import Google Font (Inter) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
+/* Skip to content link for accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--secondary-color);
+    color: var(--tertiary-color);
+    padding: 8px;
+    z-index: 10000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0 0 var(--border-radius-base) var(--border-radius-base);
+}
+
+.skip-link:focus {
+    top: 0;
+}
 
 /* Header: More prominent and inviting */
 header {
@@ -55,6 +73,9 @@ nav {
     background: var(--tertiary-color); /* Darker, more solid background */
     padding: 5px 0; /* Reduced vertical padding */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    position: sticky; /* Make navigation sticky */
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Ensure it stays on top of other content */
 }
 
 nav a {
@@ -72,11 +93,25 @@ nav a:hover {
     color: var(--tertiary-color); /* Dark text on gold hover */
 }
 
-nav a:focus,
-button:focus {
+nav a:focus {
     outline: 2px solid var(--secondary-color); /* Gold outline for focus */
     outline-offset: 3px; /* More prominent offset */
+    background-color: var(--secondary-color); /* Apply hover style on focus */
+    color: var(--tertiary-color);
 }
+
+/* Style for the active navigation link (can be added dynamically with JS) */
+nav a.nav-active {
+    background-color: var(--primary-color); /* Primary color for active link */
+    color: white;
+    cursor: default; /* No pointer for active link */
+}
+
+nav a.nav-active:hover {
+    background-color: var(--primary-hover); /* Slightly darker primary on hover for active */
+    color: white;
+}
+
 
 /* Sections: Consistent padding and backgrounds */
 section {
@@ -642,6 +677,7 @@ footer {
     }
     nav {
         flex-direction: column; /* Stack navigation items */
+        position: static; /* Remove sticky on very small screens if it causes issues */
     }
     nav a {
         flex: unset;
@@ -701,4 +737,17 @@ footer {
 .logo-img {
   max-height: 80px;
   width: auto;
+}
+
+/* Screen reader only class for accessibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
