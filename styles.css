@@ -1,4 +1,5 @@
- /* Enhanced Styles for Nomaa Adventours and More Jamaica */
+FileName: MultipleFiles/styles.css
+FileContents: /* Enhanced Styles for Nomaa Adventours and More Jamaica */
 
 /* Root Variables: Updated colors for a more vibrant, Jamaican-inspired palette */
 :root {
@@ -21,6 +22,12 @@ body {
     line-height: 1.6;
     color: var(--text-dark); /* Apply darker text color */
     background-color: #fff; /* Ensure a clean white background */
+    overflow-x: hidden; /* Prevent horizontal scroll caused by mobile menu */
+}
+
+/* Body class when mobile menu is open */
+body.menu-open {
+    overflow: hidden; /* Prevent scrolling of main content when menu is open */
 }
 
 /* Import Google Font (Inter) */
@@ -51,6 +58,7 @@ header {
     padding: 30px 15px; /* Increased padding */
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: relative; /* Needed for positioning hamburger button */
 }
 
 header h1 {
@@ -64,50 +72,138 @@ header p {
     opacity: 0.9;
 }
 
-/* Navigation: Enhanced hover and focus states */
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background: var(--tertiary-color); /* Darker, more solid background */
-    padding: 5px 0; /* Reduced vertical padding */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-    position: sticky; /* Make navigation sticky */
-    top: 0; /* Stick to the top */
-    z-index: 1000; /* Ensure it stays on top of other content */
+/* Hamburger Menu Button */
+.hamburger-menu {
+    display: none; /* Hidden by default, shown on mobile */
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 1100; /* Above mobile menu overlay */
+    padding: 5px;
 }
 
-nav a {
+.hamburger-menu:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 3px;
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    right: -100%; /* Start off-screen to the right */
+    width: 100%;
+    height: 100%;
+    background-color: var(--tertiary-color); /* Dark background for menu */
+    color: white;
+    z-index: 1050;
+    transition: right 0.3s ease-in-out;
+    padding-top: 60px; /* Space for close button */
+    box-sizing: border-box;
+}
+
+body.menu-open .mobile-menu-overlay {
+    right: 0; /* Slide in */
+    display: block; /* Show the overlay */
+}
+
+.mobile-menu-close {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2.5em;
+    cursor: pointer;
+    z-index: 1100;
+    padding: 5px;
+}
+
+.mobile-menu-close:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 3px;
+}
+
+/* Navigation links within the mobile menu */
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.mobile-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    width: 90%; /* Make links fill most of the width */
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+}
+
+.mobile-nav a:last-child {
+    border-bottom: none;
+}
+
+.mobile-nav a:hover,
+.mobile-nav a:focus {
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+    display: flex; /* Visible by default */
+    flex-wrap: wrap;
+    justify-content: center;
+    background: var(--tertiary-color);
+    padding: 5px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.desktop-nav a {
     color: white;
     text-decoration: none;
     padding: 14px 20px;
     flex: 1 1 auto;
     text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
-    font-weight: 600; /* Slightly bolder */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 600;
 }
 
-nav a:hover {
-    background-color: var(--secondary-color); /* Gold hover effect */
-    color: var(--tertiary-color); /* Dark text on gold hover */
+.desktop-nav a:hover {
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
 }
 
-nav a:focus {
-    outline: 2px solid var(--secondary-color); /* Gold outline for focus */
-    outline-offset: 3px; /* More prominent offset */
-    background-color: var(--secondary-color); /* Apply hover style on focus */
+.desktop-nav a:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 3px;
+    background-color: var(--secondary-color);
     color: var(--tertiary-color);
 }
 
 /* Style for the active navigation link (can be added dynamically with JS) */
-nav a.nav-active {
-    background-color: var(--primary-color); /* Primary color for active link */
+.desktop-nav a.nav-active {
+    background-color: var(--primary-color);
     color: white;
-    cursor: default; /* No pointer for active link */
+    cursor: default;
 }
 
-nav a.nav-active:hover {
-    background-color: var(--primary-hover); /* Slightly darker primary on hover for active */
+.desktop-nav a.nav-active:hover {
+    background-color: var(--primary-hover);
     color: white;
 }
 
@@ -637,16 +733,24 @@ footer {
 }
 
 @media (max-width: 768px) {
+    /* Hide desktop nav, show hamburger */
+    .desktop-nav {
+        display: none;
+    }
+    .hamburger-menu {
+        display: block; /* Show hamburger button */
+    }
+
     header h1 {
         font-size: 2.2em;
     }
     header p {
         font-size: 1em;
     }
-    nav a {
-        padding: 12px 15px;
-        font-size: 15px;
-    }
+    /* nav a { /* This rule is now for desktop-nav a, but was previously for all nav a */
+    /*    padding: 12px 15px; */
+    /*    font-size: 15px; */
+    /* } */
     .slideshow {
         height: 50vh;
     }
@@ -674,17 +778,17 @@ footer {
     header p {
         font-size: 0.9em;
     }
-    nav {
-        flex-direction: column; /* Stack navigation items */
-        position: static; /* Remove sticky on very small screens if it causes issues */
-    }
-    nav a {
-        flex: unset;
-        width: 100%;
-        display: block;
-        padding: 10px 12px;
-        font-size: 14px;
-    }
+    /* nav { /* This rule is now for desktop-nav, but was previously for all nav */
+    /*    flex-direction: column; */
+    /*    position: static; */
+    /* } */
+    /* nav a { /* This rule is now for desktop-nav a, but was previously for all nav a */
+    /*    flex: unset; */
+    /*    width: 100%; */
+    /*    display: block; */
+    /*    padding: 10px 12px; */
+    /*    font-size: 14px; */
+    /* } */
     .slideshow {
         height: 40vh;
     }
