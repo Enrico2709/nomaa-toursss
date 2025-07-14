@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -65,9 +65,15 @@
   </div>
   <h1>Welcome to NOMAA AdvenTours &amp; More Jamaica</h1>
   <p>Explore the world with unforgettable experiences</p>
+  <!-- Hamburger menu button for mobile -->
+  <button class="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false">
+    <i class="fas fa-bars" id="hamburger-icon"></i>
+    <i class="fas fa-times" id="close-icon" style="display: none;"></i>
+  </button>
 </header>
 
-<nav role="navigation" aria-label="Main navigation">
+<!-- Main navigation for desktop -->
+<nav class="desktop-nav" role="navigation" aria-label="Main navigation">
 <a href="#about">About Us</a>
 <a href="#tours">Tours &amp; Packages</a>
 <a href="#accommodations-crafts">Accommodations &amp; Crafts</a>
@@ -76,6 +82,20 @@
 <a href="#gallery">Gallery</a>
 <a href="#contact">Contact Us</a>
 </nav>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-menu-overlay" id="mobile-menu-overlay">
+  <button class="mobile-menu-close" aria-label="Close navigation menu">&times;</button>
+  <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <a href="#about">About Us</a>
+    <a href="#tours">Tours &amp; Packages</a>
+    <a href="#accommodations-crafts">Accommodations &amp; Crafts</a>
+    <a href="#events-celebrations">Events &amp; Celebrations</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
+</div>
 
 <main id="main-content">
 <div class="slideshow">
@@ -512,8 +532,53 @@
             }
         });
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a').forEach(anchor => {
+        // --- Hamburger Menu JavaScript ---
+        const hamburgerBtn = document.querySelector('.hamburger-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileMenuCloseBtn = document.querySelector('.mobile-menu-close');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+
+        function toggleMobileMenu() {
+            document.body.classList.toggle('menu-open');
+            const isExpanded = document.body.classList.contains('menu-open');
+            hamburgerBtn.setAttribute('aria-expanded', isExpanded);
+
+            if (isExpanded) {
+                hamburgerIcon.style.display = 'none';
+                closeIcon.style.display = 'inline-block';
+            } else {
+                hamburgerIcon.style.display = 'inline-block';
+                closeIcon.style.display = 'none';
+            }
+        }
+
+        hamburgerBtn.addEventListener('click', toggleMobileMenu);
+        mobileMenuCloseBtn.addEventListener('click', toggleMobileMenu);
+
+        // Close mobile menu when a link is clicked
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                // Smooth scrolling logic (already present)
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close the mobile menu after clicking a link
+                toggleMobileMenu();
+            });
+        });
+
+        // Close mobile menu if window is resized above mobile breakpoint
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && document.body.classList.contains('menu-open')) {
+                toggleMobileMenu();
+            }
+        });
+
+        // Smooth scrolling for desktop navigation links (original logic)
+        document.querySelectorAll('.desktop-nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
@@ -521,6 +586,7 @@
                 });
             });
         });
+
 
         // Initialize Map
         function initMap() {
