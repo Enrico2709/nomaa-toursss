@@ -1,5 +1,4 @@
-FileName: MultipleFiles/styles.css
-FileContents: /* Enhanced Styles for Nomaa Adventours and More Jamaica */
+ /* Enhanced Styles for Nomaa Adventours and More Jamaica */
 
 /* Root Variables: Updated colors for a more vibrant, Jamaican-inspired palette */
 :root {
@@ -32,8 +31,8 @@ body {
     position: absolute;
     top: -40px;
     left: 0;
-    background: var(--secondary-color);
-    color: var(--tertiary-color);
+    background: var(--secondary-color); /* Using secondary color */
+    color: var(--tertiary-color); /* Using tertiary color for text */
     padding: 8px;
     z-index: 10000;
     text-decoration: none;
