@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -9,13 +8,13 @@
 <meta content="NOMAA Tours, Adventures, &amp; More" name="author"/>
 <link href="https://www.nomaatoursjamaica.com/" rel="canonical"/>
 
-<!-- ✅ Favicon - Your Logo in Browser Tab -->
+<!-- Favicon - Your Logo in Browser Tab -->
 <link rel="icon" type="image/jpeg" href="images/logo-nomaa1.jpeg">
 <link rel="apple-touch-icon" sizes="180x180" href="images/logo-nomaa1.jpeg">
 <link rel="icon" type="image/jpeg" sizes="32x32" href="images/logo-nomaa1.jpeg">
 <link rel="icon" type="image/jpeg" sizes="16x16" href="images/logo-nomaa1.jpeg">
 
-<!-- ✅ Font Awesome for social media icons -->
+<!-- Font Awesome for social media icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <!-- Open Graph / Facebook -->
@@ -57,7 +56,9 @@
 <title>NOMAA AdvenTours and More Jamaica</title>
 </head>
 <body>
-<header>
+<!-- Skip to main content link for accessibility -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header>
   <div class="logo">
     <img src="images/logo-nomaa1.jpeg" alt="NOMAA Tours Logo" class="logo-img">
@@ -66,8 +67,7 @@
   <p>Explore the world with unforgettable experiences</p>
 </header>
 
-</header>
-<nav>
+<nav role="navigation" aria-label="Main navigation">
 <a href="#about">About Us</a>
 <a href="#tours">Tours &amp; Packages</a>
 <a href="#accommodations-crafts">Accommodations &amp; Crafts</a>
@@ -76,6 +76,8 @@
 <a href="#gallery">Gallery</a>
 <a href="#contact">Contact Us</a>
 </nav>
+
+<main id="main-content">
 <div class="slideshow">
 <div class="slide active" style="background-image: url('images/1.jpg');">
 <img alt="Scenic landscape" src="images/1.jpg" style="display: none;"/>
@@ -96,6 +98,7 @@
 <p>Your adventure starts here!</p>
 </div>
 </div>
+
 <section id="about">
 <div class="container">
 <h2>About Us</h2>
@@ -103,6 +106,7 @@
 <p>At NOMAA Tours, we combine adventure, culture, and relaxation to create unforgettable journeys that showcase the best of Jamaica. From hidden waterfalls and secluded beaches to vibrant cultural experiences, we'll guide you through the heart and soul of our beautiful country.</p>
 </div>
 </section>
+
 <section id="tours">
 <div class="container">
 <h2>Our Tours &amp; Packages</h2>
@@ -136,6 +140,7 @@
 </div>
 </div>
 </section>
+
 <!-- Accommodations & Local Crafts Section -->
 <section class="new-section" id="accommodations-crafts">
 <div class="container">
@@ -154,12 +159,11 @@
 </div>
 <!-- Add your images here -->
 <div class="image-gallery">
-<!-- Fallback placeholders added for robustness -->
 <img alt="Cozy Jamaican Bed and Breakfast" onerror="this.onerror=null;this.src='https://placehold.co/600x400/007A3D/FFFFFF?text=B%26B+Placeholder';" src="images/bnb1.jpg">
 <img alt="Jamaican Crochet Workshop" onerror="this.onerror=null;this.src='https://placehold.co/600x400/FEC700/2D2926?text=Crochet+Placeholder';" src="images/crochet-workshop.jpg">
-</img></img></div>
 </div>
 </section>
+
 <!-- Events & Celebrations Section -->
 <section class="new-section" id="events-celebrations">
 <div class="container">
@@ -171,9 +175,9 @@
 <div class="image-gallery">
 <img alt="Jamaican Beach Wedding" onerror="this.onerror=null;this.src='https://placehold.co/600x400/17a2b8/FFFFFF?text=Wedding+Placeholder';" src="images/wedding.jpg">
 <img alt="Jamaican Celebration Party" onerror="this.onerror=null;this.src='https://placehold.co/600x400/4CAF50/FFFFFF?text=Party+Placeholder';" src="images/party.jpg">
-</img></img></div>
 </div>
 </section>
+
 <section id="testimonials">
 <div class="container">
 <h2>What Our Clients Say</h2>
@@ -199,6 +203,7 @@
 </div>
 </div>
 </section>
+
 <section id="gallery">
 <div class="container">
 <h2>Gallery</h2>
@@ -206,7 +211,7 @@
 <div class="gallery-container">
 <div class="gallery-item">
 <img alt="Jamaica beach" onerror="this.onerror=null;this.src='https://placehold.co/400x300/4CAF50/FFFFFF?text=Beach+1';" src="images/1.jpg">
-</img></div>
+</div>
 <div class="gallery-item">
 <img alt="Blue mountain" onerror="this.onerror=null;this.src='https://placehold.co/400x300/17a2b8/FFFFFF?text=Mountain+2';" src="images/2.jpg"/>
 </div>
@@ -229,60 +234,67 @@
 <img alt="Tropical forest" onerror="this.onerror=null;this.src='https://placehold.co/400x300/17a2b8/FFFFFF?text=Forest+6';" src="images/8.jpg"/>
 </div>
 </section>
+
 <section id="contact">
   <div class="container">
+    <section style="text-align: center; padding: 40px 20px; background-color: #f9f9f9;">
+      <h2 style="color: #007A3D; margin-bottom: 20px;">Contact Us</h2>
 
-<!-- Contact Us Section -->
-<section style="text-align: center; padding: 40px 20px; background-color: #f9f9f9;">
-  <h2 style="color: #007A3D; margin-bottom: 20px;">Contact Us</h2>
+      <address style="font-style: normal; margin-bottom: 20px;">
+        <p style="font-size: 18px; margin: 10px 0;">
+          <i class="fas fa-envelope" style="color: #007A3D; margin-right: 8px;"></i>
+          <a href="mailto:Nomaaadventoursandmorejamaica@gmail.com" style="color: #000;">
+            Nomaaadventoursandmorejamaica@gmail.com
+          </a>
+        </p>
+        <p style="font-size: 18px; margin: 10px 0;">
+          <i class="fas fa-phone-alt" style="color: #007A3D; margin-right: 8px;"></i>
+          <a href="tel:+18764059605" style="color: #000;">876-405-9605</a> |
+          <a href="tel:+18764847700" style="color: #000;">876-484-7700</a>
+        </p>
+      </address>
 
-  <p style="font-size: 18px; margin: 10px 0;">
-    <i class="fas fa-envelope" style="color: #007A3D; margin-right: 8px;"></i>
-    <a href="mailto:Nomaaadventoursandmorejamaica@gmail.com" style="color: #000;">
-      Nomaaadventoursandmorejamaica@gmail.com
-    </a>
-  </p>
+      <h3 style="text-align: center; color: #007A3D; margin-top: 40px;">
+        <span style="border-bottom: 3px solid #FEC700; padding-bottom: 5px;">Follow Us</span>
+      </h3>
 
-  <p style="font-size: 18px; margin: 10px 0;">
-    <i class="fas fa-phone-alt" style="color: #007A3D; margin-right: 8px;"></i>
-    <a href="tel:+18764059605" style="color: #000;">876-405-9605</a> |
-    <a href="tel:+18764847700" style="color: #000;">876-484-7700</a>
-  </p>
+      <ul class="social-icons" style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 30px; margin-top: 15px;">
+        <li>
+          <a href="https://www.instagram.com/nomaa.adventours.and.more" target="_blank" rel="noopener noreferrer" style="color: #E1306C; font-size: 30px;">
+            <i class="fab fa-instagram"></i>
+            <span class="sr-only">Instagram</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/share/1ADac6DEAq/" target="_blank" rel="noopener noreferrer" style="color: #1877F2; font-size: 30px;">
+            <i class="fab fa-facebook"></i>
+            <span class="sr-only">Facebook</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.tiktok.com/@nomaaadventoursandmoreja?_t=ZM-8y1Ujyw4cYa&_r=1" target="_blank" rel="noopener noreferrer" style="color: #000000; font-size: 30px;">
+            <i class="fab fa-tiktok"></i>
+            <span class="sr-only">TikTok</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/@nomaaadventoursandmorejama-u9n" target="_blank" rel="noopener noreferrer" style="color: #FF0000; font-size: 30px;">
+            <i class="fab fa-youtube"></i>
+            <span class="sr-only">YouTube</span>
+          </a>
+        </li>
+      </ul>
+    </section>
 
-
-  <h3 style="text-align: center; color: #007A3D; margin-top: 40px;">
-  <span style="border-bottom: 3px solid #FEC700; padding-bottom: 5px;">Follow Us</span>
-</h3>
-
-<div class="social-icons" style="display: flex; justify-content: center; gap: 30px; margin-top: 15px;">
-  <a href="https://www.instagram.com/nomaa.adventours.and.more" target="_blank" style="color: #E1306C; font-size: 30px;">
-    <i class="fab fa-instagram"></i>
-  </a>
-  <a href="https://www.facebook.com/share/1ADac6DEAq/" target="_blank" style="color: #1877F2; font-size: 30px;">
-    <i class="fab fa-facebook"></i>
-  </a>
-  <a href="https://www.tiktok.com/@nomaaadventoursandmoreja?_t=ZM-8y1Ujyw4cYa&_r=1" target="_blank" style="color: #000000; font-size: 30px;">
-    <i class="fab fa-tiktok"></i>
-  </a>
-  <a href="https://www.youtube.com/@nomaaadventoursandmorejama-u9n" target="_blank" style="color: #FF0000; font-size: 30px;">
-    <i class="fab fa-youtube"></i>
-  </a>
-</div>
-
-</div>
-
+    <div aria-label="Map showing NOMAA Tours location" id="map"></div>
   </div>
 </section>
+</main>
 
-</p>
-<div aria-label="Map showing NOMAA Tours location" id="map"></div>
-</div>
-</section>
-
-</section>
 <footer>
 <p>© 2025 NOMAA AdvenTours &amp; More Jamaica. All rights reserved. One Love, One Jamaica!</p>
 </footer>
+
 <div class="booking-form" id="bookingForm">
 <div class="booking-form-content">
 <h3>Book Your Tour Now</h3>
@@ -290,17 +302,22 @@
 <label for="name">Your Name:</label>
 <input id="name" name="name" placeholder="Your Name" required="" type="text"/>
 <div class="error-message" id="name-error"></div>
+
 <label for="email">Your Email:</label>
 <input id="email" name="email" placeholder="Your Email" required="" type="email"/>
 <div class="error-message" id="email-error"></div>
+
 <label for="phone">Your Phone Number:</label>
 <input id="phone" name="phone" placeholder="Your Phone Number" required="" type="text"/>
 <div class="error-message" id="phone-error"></div>
+
 <label for="date">Tour Date:</label>
 <input id="date" name="date" required="" type="date"/>
 <div class="error-message" id="date-error"></div>
+
 <input id="tourName" name="tourName" type="hidden"/>
 <input id="tourPrice" name="tourPrice" type="hidden"/>
+
 <button type="submit">Submit</button>
 <button onclick="closeBookingForm();" type="button">Close</button>
 <div class="loading-indicator" style="display: none;">Processing...</div>
@@ -308,6 +325,7 @@
 </form>
 </div>
 </div>
+
 <script>
         function showBookingForm(tourName, tourPrice) {
             document.getElementById('tourName').value = tourName;
